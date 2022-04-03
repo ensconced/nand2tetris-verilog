@@ -839,7 +839,7 @@ Warning 817: Model 'VCC' output port 'VCC' has no timing specification (no clock
 Warning 818: Model 'GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
 Warning 819: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'D' of model '.latch', port is a sequential input but has neither T_setup nor T_hold specified
 Warning 820: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'Q' of model '.latch', port is a sequential output but has neither min nor max T_clock_to_Q specified
-Loading Architecture Description took 1.31 seconds (max_rss 59.3 MiB, delta_rss +53.5 MiB)
+Loading Architecture Description took 1.30 seconds (max_rss 59.3 MiB, delta_rss +53.6 MiB)
 
 Warning 821: Non-zero switch output capacitance (4e-15) has no effect when switch 'buffer' is used for connection block inputs
 Timing analysis: ON
@@ -1008,8 +1008,8 @@ Load packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'not_gate.net'.
 Detected 1 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.009698 seconds).
-Load packing took 0.01 seconds (max_rss 90.8 MiB, delta_rss +31.6 MiB)
+Finished loading packed FPGA netlist file (took 0.01067 seconds).
+Load packing took 0.01 seconds (max_rss 91.2 MiB, delta_rss +31.9 MiB)
 Warning 822: Netlist contains 0 global net to non-global architecture pin connections
 Warning 823: Logic block #3 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
 
@@ -1230,42 +1230,42 @@ Device Utilization: 0.00 (target 1.00)
 	Physical Tile SYN-GND:
 	Block Utilization: 0.00 Logical Block: SYN-GND
 
-# Build Device Grid took 0.04 seconds (max_rss 91.1 MiB, delta_rss +0.0 MiB)
+# Build Device Grid took 0.04 seconds (max_rss 91.3 MiB, delta_rss +0.0 MiB)
 # Loading routing resource graph
 
 
-# Loading routing resource graph took 12.77 seconds (max_rss 3950.6 MiB, delta_rss +3859.5 MiB)
+# Loading routing resource graph took 12.72 seconds (max_rss 3948.9 MiB, delta_rss +3857.7 MiB)
   RR Graph Nodes: 2934684
   RR Graph Edges: 22357697
-Create Device took 13.46 seconds (max_rss 3950.6 MiB, delta_rss +3859.5 MiB)
+Create Device took 13.41 seconds (max_rss 3948.9 MiB, delta_rss +3857.7 MiB)
 
 Load Placement
 Reading not_gate.place.
 
 Successfully read not_gate.place.
 
-Load Placement took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
+Load Placement took 0.00 seconds (max_rss 3948.9 MiB, delta_rss +0.0 MiB)
 
 Load Routing
 Begin loading FPGA routing file.
 Finished loading route file
-Load Routing took 0.08 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
+Load Routing took 0.08 seconds (max_rss 3948.9 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
 
 Serial number (magic cookie) for the routing is: 541298
 Circuit successfully routed with a channel width factor of 500.
-Incr Slack updates 1 in 3.127e-06 sec
-Full Max Req/Worst Slack updates 1 in 1.557e-06 sec
+Incr Slack updates 1 in 4.545e-06 sec
+Full Max Req/Worst Slack updates 1 in 2.066e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 6.086e-06 sec
+Full Criticality updates 1 in 7.81e-06 sec
 Synchronize the packed netlist to routing optimization
 # Annotating rr_node with routed nets
-# Annotating rr_node with routed nets took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 3948.9 MiB, delta_rss +0.0 MiB)
 Found 0 mismatches between routing and packing results.
 Fixed 0 routing traces due to mismatch between routing and packing results.
-Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
+Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 3948.9 MiB, delta_rss +0.0 MiB)
 Writing Implementation FASM: not_gate.fasm
-The entire flow of VPR took 17.6671 seconds.
+The entire flow of VPR took 17.6096 seconds.

@@ -22,9 +22,16 @@
  Yosys 0.13+3 (git sha1 61324cf55, x86_64-conda_cos6-linux-gnu-gcc 1.24.0.133_b0863d8_dirty -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/home/runner/work/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1642201854658/work=/usr/local/src/conda/yosys-0.13_4_g61324cf55 -fdebug-prefix-map=/home/joe/opt/symbiflow/xc7/conda/envs/xc7=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
 
 
+-- Parsing `/home/joe/dev/nand2tetris-verilog/components/and_gate.v' using frontend ` -vlog2k' --
+
+1. Executing Verilog-2005 frontend: /home/joe/dev/nand2tetris-verilog/components/and_gate.v
+Parsing Verilog input from `/home/joe/dev/nand2tetris-verilog/components/and_gate.v' to AST representation.
+Storing AST representation for module `$abstract\and_gate'.
+Successfully finished Verilog frontend.
+
 -- Parsing `/home/joe/dev/nand2tetris-verilog/components/nand_gate.v' using frontend ` -vlog2k' --
 
-1. Executing Verilog-2005 frontend: /home/joe/dev/nand2tetris-verilog/components/nand_gate.v
+2. Executing Verilog-2005 frontend: /home/joe/dev/nand2tetris-verilog/components/nand_gate.v
 Parsing Verilog input from `/home/joe/dev/nand2tetris-verilog/components/nand_gate.v' to AST representation.
 Storing AST representation for module `$abstract\nand_gate'.
 Successfully finished Verilog frontend.
@@ -275,7 +282,7 @@ Loaded SDC plugin
 [TCL: yosys -import] Command name collision: found pre-existing command `xilinx_srl' -> skip.
 [TCL: yosys -import] Command name collision: found pre-existing command `zinit' -> skip.
 
-2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v
+3. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v' to AST representation.
 Generating RTLIL representation for module `\VCC'.
 Generating RTLIL representation for module `\GND'.
@@ -378,7 +385,7 @@ Generating RTLIL representation for module `\RAMB18E1'.
 Generating RTLIL representation for module `\RAMB36E1'.
 Successfully finished Verilog frontend.
 
-3. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v
+4. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v' to AST representation.
 Generating RTLIL representation for module `\RAMB16_S1'.
 Generating RTLIL representation for module `\RAMB16_S2'.
@@ -690,7 +697,7 @@ Generating RTLIL representation for module `\VCU'.
 Generating RTLIL representation for module `\FE'.
 Successfully finished Verilog frontend.
 
-4. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v
+5. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v' to AST representation.
 Replacing existing blackbox module `\IBUF' at /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v:1.1-17.10.
 Generating RTLIL representation for module `\IBUF'.
@@ -714,32 +721,33 @@ Replacing existing blackbox module `\GTPE2_CHANNEL' at /home/joe/opt/symbiflow/x
 Generating RTLIL representation for module `\GTPE2_CHANNEL'.
 Successfully finished Verilog frontend.
 
-5. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/retarget.v
+6. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/retarget.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/retarget.v' to AST representation.
 Generating RTLIL representation for module `\FD'.
 Successfully finished Verilog frontend.
 
-6. Executing HIERARCHY pass (managing design hierarchy).
+7. Executing HIERARCHY pass (managing design hierarchy).
 
-7. Executing AST frontend in derive mode using pre-parsed AST for module `\nand_gate'.
+8. Executing AST frontend in derive mode using pre-parsed AST for module `\nand_gate'.
 Generating RTLIL representation for module `\nand_gate'.
 
-7.1. Analyzing design hierarchy..
+8.1. Analyzing design hierarchy..
 Top module:  \nand_gate
 
-7.2. Analyzing design hierarchy..
+8.2. Analyzing design hierarchy..
 Top module:  \nand_gate
 Removing unused module `$abstract\nand_gate'.
-Removed 1 unused modules.
+Removing unused module `$abstract\and_gate'.
+Removed 2 unused modules.
 
-8. Executing SYNTH_XILINX pass.
+9. Executing SYNTH_XILINX pass.
 
-8.1. Executing PROC pass (convert processes to netlists).
+9.1. Executing PROC pass (convert processes to netlists).
 
-8.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+9.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-8.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+9.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:1981$995 in module RAM64M.
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:1807$851 in module RAM32M.
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:1711$792 in module RAM128X1D.
@@ -756,11 +764,11 @@ Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:489$544 in module FDRE.
 Removed a total of 0 dead cases.
 
-8.1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+9.1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
 Promoted 75 assignments to connections.
 
-8.1.4. Executing PROC_INIT pass (extract init attributes).
+9.1.4. Executing PROC_INIT pass (extract init attributes).
 Found init rule in `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2400$1152'.
   Set init value: \r = 0
 Found init rule in `\SRLC16E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2356$1145'.
@@ -812,13 +820,13 @@ Found init rule in `\FDRE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin
 Found init rule in `\FDRE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:0$547'.
   Set init value: \Q = 1'0
 
-8.1.5. Executing PROC_ARST pass (detect async resets in processes).
+9.1.5. Executing PROC_ARST pass (detect async resets in processes).
 Found async reset \PRE in `\FDPE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:810$606'.
 Found async reset \PRE in `\FDPE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:769$603'.
 Found async reset \CLR in `\FDCE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:731$588'.
 Found async reset \CLR in `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$585'.
 
-8.1.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+9.1.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
 Creating decoders for process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2400$1152'.
 Creating decoders for process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$1151'.
      1/1: $0\r[31:0]
@@ -911,9 +919,9 @@ Creating decoders for process `\FDRE.$proc$/home/joe/opt/symbiflow/xc7/conda/env
 Creating decoders for process `\FDRE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:489$544'.
      1/1: $0\Q[0:0]
 
-8.1.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+9.1.7. Executing PROC_DLATCH pass (convert process syncs to latches).
 
-8.1.8. Executing PROC_DFF pass (convert process syncs to FFs).
+9.1.8. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\SRLC32E.\r' using process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$1151'.
   created $dff cell `$procdff$1349' with positive edge clock.
 Creating register for signal `\SRLC16E.\r' using process `\SRLC16E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2364$1144'.
@@ -1037,9 +1045,9 @@ Creating register for signal `\FDRE_1.\Q' using process `\FDRE_1.$proc$/home/joe
 Creating register for signal `\FDRE.\Q' using process `\FDRE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:489$544'.
   created $dff cell `$procdff$1409' with positive edge clock.
 
-8.1.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+9.1.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
-8.1.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+9.1.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Removing empty process `SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2400$1152'.
 Found and cleaned up 1 empty switch in `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$1151'.
 Removing empty process `SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$1151'.
@@ -1103,206 +1111,206 @@ Found and cleaned up 2 empty switches in `\FDRE.$proc$/home/joe/opt/symbiflow/xc
 Removing empty process `FDRE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:489$544'.
 Cleaned up 21 empty switches.
 
-8.1.11. Executing OPT_EXPR pass (perform const folding).
+9.1.11. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.2. Executing FLATTEN pass (flatten design).
+9.2. Executing FLATTEN pass (flatten design).
 
-8.3. Executing TRIBUF pass.
+9.3. Executing TRIBUF pass.
 
-8.4. Executing DEMINOUT pass (demote inout ports to input or output).
+9.4. Executing DEMINOUT pass (demote inout ports to input or output).
 
-8.5. Executing OPT_EXPR pass (perform const folding).
+9.5. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
-Removed 0 unused cells and 1 unused wires.
+Removed 0 unused cells and 2 unused wires.
 
-8.7. Executing CHECK pass (checking for obvious problems).
+9.7. Executing CHECK pass (checking for obvious problems).
 Checking module nand_gate...
 Found and reported 0 problems.
 
-8.8. Executing OPT pass (performing simple optimizations).
+9.8. Executing OPT pass (performing simple optimizations).
 
-8.8.1. Executing OPT_EXPR pass (perform const folding).
+9.8.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.8.2. Executing OPT_MERGE pass (detect identical cells).
+9.8.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+9.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \nand_gate..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-8.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+9.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \nand_gate.
 Performed a total of 0 changes.
 
-8.8.5. Executing OPT_MERGE pass (detect identical cells).
+9.8.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+9.8.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.8.8. Executing OPT_EXPR pass (perform const folding).
+9.8.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.8.9. Finished OPT passes. (There is nothing left to do.)
+9.8.9. Finished OPT passes. (There is nothing left to do.)
 
-8.9. Executing FSM pass (extract and optimize FSM).
+9.9. Executing FSM pass (extract and optimize FSM).
 
-8.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+9.9.1. Executing FSM_DETECT pass (finding FSMs in design).
 
-8.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+9.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
 
-8.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+9.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
 
-8.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+9.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
 
-8.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+9.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
 
-8.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+9.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
 
-8.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+9.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
 
-8.10. Executing OPT pass (performing simple optimizations).
+9.10. Executing OPT pass (performing simple optimizations).
 
-8.10.1. Executing OPT_EXPR pass (perform const folding).
+9.10.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.10.2. Executing OPT_MERGE pass (detect identical cells).
+9.10.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+9.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \nand_gate..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-8.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+9.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \nand_gate.
 Performed a total of 0 changes.
 
-8.10.5. Executing OPT_MERGE pass (detect identical cells).
+9.10.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+9.10.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.10.8. Executing OPT_EXPR pass (perform const folding).
+9.10.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.10.9. Finished OPT passes. (There is nothing left to do.)
+9.10.9. Finished OPT passes. (There is nothing left to do.)
 
-8.11. Executing WREDUCE pass (reducing word size of cells).
+9.11. Executing WREDUCE pass (reducing word size of cells).
 
-8.12. Executing PEEPOPT pass (run peephole optimizers).
+9.12. Executing PEEPOPT pass (run peephole optimizers).
 
-8.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.13. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.14. Executing TECHMAP pass (map to technology primitives).
+9.14. Executing TECHMAP pass (map to technology primitives).
 
-8.14.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lut.v
+9.14.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lut.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lut.v' to AST representation.
 Generating RTLIL representation for module `\_90_lut_cmp_'.
 Successfully finished Verilog frontend.
 
-8.14.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lcu.v
+9.14.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lcu.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/cmp2lcu.v' to AST representation.
 Generating RTLIL representation for module `\_80_lcu_cmp_'.
 Generating RTLIL representation for module `\$__CMP2LCU'.
 Successfully finished Verilog frontend.
 
-8.14.3. Continuing TECHMAP pass.
+9.14.3. Continuing TECHMAP pass.
 No more expansions possible.
 
-8.15. Executing ALUMACC pass (create $alu and $macc cells).
+9.15. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module nand_gate:
   created 0 $alu and 0 $macc cells.
 
-8.16. Executing SHARE pass (SAT-based resource sharing).
+9.16. Executing SHARE pass (SAT-based resource sharing).
 
-8.17. Executing OPT pass (performing simple optimizations).
+9.17. Executing OPT pass (performing simple optimizations).
 
-8.17.1. Executing OPT_EXPR pass (perform const folding).
+9.17.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.17.2. Executing OPT_MERGE pass (detect identical cells).
+9.17.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+9.17.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \nand_gate..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-8.17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+9.17.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \nand_gate.
 Performed a total of 0 changes.
 
-8.17.5. Executing OPT_MERGE pass (detect identical cells).
+9.17.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.17.6. Executing OPT_DFF pass (perform DFF optimizations).
+9.17.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.17.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.17.8. Executing OPT_EXPR pass (perform const folding).
+9.17.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.17.9. Finished OPT passes. (There is nothing left to do.)
+9.17.9. Finished OPT passes. (There is nothing left to do.)
 
-8.18. Executing MEMORY pass.
+9.18. Executing MEMORY pass.
 
-8.18.1. Executing OPT_MEM pass (optimize memories).
+9.18.1. Executing OPT_MEM pass (optimize memories).
 Performed a total of 0 transformations.
 
-8.18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+9.18.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
 Performed a total of 0 transformations.
 
-8.18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+9.18.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
 
-8.18.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+9.18.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
 
-8.18.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.18.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.18.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+9.18.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
 
-8.18.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+9.18.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
 Performed a total of 0 transformations.
 
-8.18.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.18.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.18.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+9.18.9. Executing MEMORY_COLLECT pass (generating $mem cells).
 
-8.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.19. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.20. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+9.20. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
 
-8.21. Executing TECHMAP pass (map to technology primitives).
+9.21. Executing TECHMAP pass (map to technology primitives).
 
-8.21.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/xc7_brams_map.v
+9.21.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/xc7_brams_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/xc7_brams_map.v' to AST representation.
 Generating RTLIL representation for module `\$__XILINX_RAMB36_SDP'.
 Generating RTLIL representation for module `\$__XILINX_RAMB18_SDP'.
@@ -1310,14 +1318,14 @@ Generating RTLIL representation for module `\$__XILINX_RAMB36_TDP'.
 Generating RTLIL representation for module `\$__XILINX_RAMB18_TDP'.
 Successfully finished Verilog frontend.
 
-8.21.2. Continuing TECHMAP pass.
+9.21.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-8.22. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+9.22. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
 
-8.23. Executing TECHMAP pass (map to technology primitives).
+9.23. Executing TECHMAP pass (map to technology primitives).
 
-8.23.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lutrams_map.v
+9.23.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lutrams_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lutrams_map.v' to AST representation.
 Generating RTLIL representation for module `\$__XILINX_RAM16X1D'.
 Generating RTLIL representation for module `\$__XILINX_RAM32X1D'.
@@ -1329,65 +1337,65 @@ Generating RTLIL representation for module `\$__XILINX_RAM32X2Q'.
 Generating RTLIL representation for module `\$__XILINX_RAM64X1Q'.
 Successfully finished Verilog frontend.
 
-8.23.2. Continuing TECHMAP pass.
+9.23.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-8.24. Executing OPT pass (performing simple optimizations).
+9.24. Executing OPT pass (performing simple optimizations).
 
-8.24.1. Executing OPT_EXPR pass (perform const folding).
+9.24.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.24.2. Executing OPT_MERGE pass (detect identical cells).
+9.24.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+9.24.3. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.24.5. Finished fast OPT passes.
+9.24.5. Finished fast OPT passes.
 
-8.25. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+9.25. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
 
-8.26. Executing OPT pass (performing simple optimizations).
+9.26. Executing OPT pass (performing simple optimizations).
 
-8.26.1. Executing OPT_EXPR pass (perform const folding).
+9.26.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.26.2. Executing OPT_MERGE pass (detect identical cells).
+9.26.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+9.26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \nand_gate..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
-8.26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+9.26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \nand_gate.
 Performed a total of 0 changes.
 
-8.26.5. Executing OPT_MERGE pass (detect identical cells).
+9.26.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.26.6. Executing OPT_SHARE pass.
+9.26.6. Executing OPT_SHARE pass.
 
-8.26.7. Executing OPT_DFF pass (perform DFF optimizations).
+9.26.7. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.26.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.26.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.26.9. Executing OPT_EXPR pass (perform const folding).
+9.26.9. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.26.10. Finished OPT passes. (There is nothing left to do.)
+9.26.10. Finished OPT passes. (There is nothing left to do.)
 
-8.27. Executing TECHMAP pass (map to technology primitives).
+9.27. Executing TECHMAP pass (map to technology primitives).
 
-8.27.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
+9.27.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
@@ -1414,41 +1422,41 @@ Generating RTLIL representation for module `\_90_pmux'.
 Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
-8.27.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/arith_map.v
+9.27.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/arith_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/arith_map.v' to AST representation.
 Generating RTLIL representation for module `\_80_xilinx_lcu'.
 Generating RTLIL representation for module `\_80_xilinx_alu'.
 Successfully finished Verilog frontend.
 
-8.27.3. Continuing TECHMAP pass.
+9.27.3. Continuing TECHMAP pass.
 Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $not.
 No more expansions possible.
 
-8.28. Executing OPT pass (performing simple optimizations).
+9.28. Executing OPT pass (performing simple optimizations).
 
-8.28.1. Executing OPT_EXPR pass (perform const folding).
+9.28.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.28.2. Executing OPT_MERGE pass (detect identical cells).
+9.28.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\nand_gate'.
 Removed a total of 0 cells.
 
-8.28.3. Executing OPT_DFF pass (perform DFF optimizations).
+9.28.3. Executing OPT_DFF pass (perform DFF optimizations).
 
-8.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+9.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 
-8.28.5. Finished fast OPT passes.
+9.28.5. Finished fast OPT passes.
 
-8.29. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
-Mapping port nand_gate.and_result using OBUF.
-Mapping port nand_gate.input_1 using IBUF.
-Mapping port nand_gate.input_2 using IBUF.
+9.29. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port nand_gate.in_a using IBUF.
+Mapping port nand_gate.in_b using IBUF.
+Mapping port nand_gate.out using OBUF.
 
-8.30. Executing TECHMAP pass (map to technology primitives).
+9.30. Executing TECHMAP pass (map to technology primitives).
 
-8.30.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
+9.30.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
@@ -1475,28 +1483,27 @@ Generating RTLIL representation for module `\_90_pmux'.
 Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
-8.30.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
+9.30.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
 Generating RTLIL representation for module `\$__SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_MUXF78'.
 Successfully finished Verilog frontend.
 
-8.30.3. Continuing TECHMAP pass.
+9.30.3. Continuing TECHMAP pass.
 No more expansions possible.
-Removed 0 unused cells and 1 unused wires.
 
-8.31. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+9.31. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 
-8.32. Executing OPT_EXPR pass (perform const folding).
+9.32. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-8.33. Executing ABC pass (technology mapping using ABC).
+9.33. Executing ABC pass (technology mapping using ABC).
 
-8.33.1. Extracting gate netlist of module `\nand_gate' to `<abc-temp-dir>/input.blif'..
+9.33.1. Extracting gate netlist of module `\nand_gate' to `<abc-temp-dir>/input.blif'..
 Extracted 2 gates and 4 wires to a netlist network with 2 inputs and 1 outputs.
 
-8.33.1.1. Executing ABC.
+9.33.1.1. Executing ABC.
 Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
 ABC: ABC command line: "source <abc-temp-dir>/abc.script".
 ABC: 
@@ -1514,7 +1521,7 @@ ABC: + if
 ABC: + mfs2 
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
-8.33.1.2. Re-integrating ABC results.
+9.33.1.2. Re-integrating ABC results.
 ABC RESULTS:              $lut cells:        1
 ABC RESULTS:        internal signals:        1
 ABC RESULTS:           input signals:        2
@@ -1522,9 +1529,9 @@ ABC RESULTS:          output signals:        1
 Removing temp directory.
 Removed 0 unused cells and 4 unused wires.
 
-8.34. Executing TECHMAP pass (map to technology primitives).
+9.34. Executing TECHMAP pass (map to technology primitives).
 
-8.34.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v
+9.34.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v' to AST representation.
 Generating RTLIL representation for module `\$_DFFE_NP0P_'.
 Generating RTLIL representation for module `\$_DFFE_PP0P_'.
@@ -1544,40 +1551,40 @@ Generating RTLIL representation for module `\$_DLATCH_NPP_'.
 Generating RTLIL representation for module `\$_DLATCH_PPP_'.
 Successfully finished Verilog frontend.
 
-8.34.2. Continuing TECHMAP pass.
+9.34.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-8.35. Executing TECHMAP pass (map to technology primitives).
+9.35. Executing TECHMAP pass (map to technology primitives).
 
-8.35.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v
+9.35.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v' to AST representation.
 Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
-8.35.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
+9.35.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
 Generating RTLIL representation for module `\$__SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_MUXF78'.
 Successfully finished Verilog frontend.
 
-8.35.3. Continuing TECHMAP pass.
+9.35.3. Continuing TECHMAP pass.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
 No more expansions possible.
 
-8.36. Executing XILINX_DFFOPT pass (optimize FF control signal usage).
+9.36. Executing XILINX_DFFOPT pass (optimize FF control signal usage).
 Optimizing FFs in nand_gate.
 
-8.37. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+9.37. Executing OPT_LUT_INS pass (discard unused LUT inputs).
 Optimizing LUTs in nand_gate.
 Removed 0 unused cells and 3 unused wires.
 
-9. Executing HIERARCHY pass (managing design hierarchy).
+10. Executing HIERARCHY pass (managing design hierarchy).
 
-9.1. Analyzing design hierarchy..
+10.1. Analyzing design hierarchy..
 Top module:  \nand_gate
 
-9.2. Analyzing design hierarchy..
+10.2. Analyzing design hierarchy..
 Top module:  \nand_gate
 Removed 0 unused modules.
 # Clock signal
@@ -1600,11 +1607,11 @@ Removed 0 unused modules.
 # set_property PACKAGE_PIN W15 [get_ports {address[4]}]
 # set_property PACKAGE_PIN W17 [get_ports {address[3]}]
 # set_property PACKAGE_PIN W16 [get_ports {address[2]}]
-set_property PACKAGE_PIN V16 [get_ports {input_1}]
-set_property PACKAGE_PIN V17 [get_ports {input_2}]
+set_property PACKAGE_PIN V16 [get_ports {in_a}]
+set_property PACKAGE_PIN V17 [get_ports {in_b}]
 
-set_property IOSTANDARD LVCMOS33 [get_ports {input_1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {input_2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {in_a}]
+set_property IOSTANDARD LVCMOS33 [get_ports {in_b}]
 
 
 # LEDs
@@ -1623,22 +1630,22 @@ set_property IOSTANDARD LVCMOS33 [get_ports {input_2}]
 # set_property PACKAGE_PIN V19 [get_ports {led_output[3]}]
 # set_property PACKAGE_PIN U19 [get_ports {led_output[2]}]
 # set_property PACKAGE_PIN E19 [get_ports {led_output[1]}]
-set_property PACKAGE_PIN U16 [get_ports {and_result}]
+set_property PACKAGE_PIN U16 [get_ports {out}]
 
-set_property IOSTANDARD LVCMOS33 [get_ports {and_result}]
+set_property IOSTANDARD LVCMOS33 [get_ports {out}]
 
 
-Setting parameter \IO_LOC_PAIRS to value input_1:V16 on cell $iopadmap$nand_gate.input_1 
+Setting parameter \IO_LOC_PAIRS to value in_a:V16 on cell $iopadmap$nand_gate.in_a 
 
-Setting parameter \IO_LOC_PAIRS to value input_2:V17 on cell $iopadmap$nand_gate.input_2 
+Setting parameter \IO_LOC_PAIRS to value in_b:V17 on cell $iopadmap$nand_gate.in_b 
 
-Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.input_1 
+Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.in_a 
 
-Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.input_2 
+Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.in_b 
 
-Setting parameter \IO_LOC_PAIRS to value and_result:U16 on cell $iopadmap$nand_gate.and_result 
+Setting parameter \IO_LOC_PAIRS to value out:U16 on cell $iopadmap$nand_gate.out 
 
-Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.and_result 
+Setting parameter \IOSTANDARD to value LVCMOS33 on cell $iopadmap$nand_gate.out 
 
 Perform clock propagation
 Warning: Selection is empty
@@ -1646,10 +1653,10 @@ Warning: Selection is empty
 
 Writing out clock constraints file(SDC)
 
-10. Executing Verilog backend.
+11. Executing Verilog backend.
 Dumping module `\nand_gate'.
 
-11. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v
+12. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v' to AST representation.
 Generating RTLIL representation for module `\CE_VCC'.
 Generating RTLIL representation for module `\SR_GND'.
@@ -1705,44 +1712,44 @@ Generating RTLIL representation for module `\GTPE2_CHANNEL_VPR'.
 Generating RTLIL representation for module `\PCIE_2_1_VPR'.
 Successfully finished Verilog frontend.
 
-12. Executing TECHMAP pass (map to technology primitives).
+13. Executing TECHMAP pass (map to technology primitives).
 
-12.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/carry_map.v
+13.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/carry_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/carry_map.v' to AST representation.
 Generating RTLIL representation for module `\CARRY4'.
 Successfully finished Verilog frontend.
 
-12.2. Continuing TECHMAP pass.
+13.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-13. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+14. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-14. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+15. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Removed a total of 0 dead cases.
 
-15. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+16. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
 Promoted 0 assignments to connections.
 
-16. Executing PROC_INIT pass (extract init attributes).
+17. Executing PROC_INIT pass (extract init attributes).
 
-17. Executing PROC_ARST pass (detect async resets in processes).
+18. Executing PROC_ARST pass (detect async resets in processes).
 
-18. Executing PROC_MUX pass (convert decision trees to multiplexers).
+19. Executing PROC_MUX pass (convert decision trees to multiplexers).
 
-19. Executing PROC_DLATCH pass (convert process syncs to latches).
+20. Executing PROC_DLATCH pass (convert process syncs to latches).
 
-20. Executing PROC_DFF pass (convert process syncs to FFs).
+21. Executing PROC_DFF pass (convert process syncs to FFs).
 
-21. Executing PROC_MEMWR pass (convert process memory writes to cells).
+22. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
-22. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+23. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-23. Executing JSON backend.
+24. Executing JSON backend.
 
-24. Executing JSON frontend.
+25. Executing JSON frontend.
 Importing module nand_gate from JSON tree.
 Importing module XORCY from JSON tree.
 Importing module XADC from JSON tree.
@@ -2203,19 +2210,19 @@ Importing module AND2B1L from JSON tree.
 Importing module \$__ABC9_LUT8 from JSON tree.
 Importing module \$__ABC9_LUT7 from JSON tree.
 
-25. Executing TECHMAP pass (map to technology primitives).
+26. Executing TECHMAP pass (map to technology primitives).
 
-25.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/clean_carry_map.v
+26.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/clean_carry_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/clean_carry_map.v' to AST representation.
 Generating RTLIL representation for module `\CARRY_CO_DIRECT'.
 Generating RTLIL representation for module `\CARRY_CO_LUT'.
 Generating RTLIL representation for module `\CARRY_CO_TOP_POP'.
 Successfully finished Verilog frontend.
 
-25.2. Continuing TECHMAP pass.
+26.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-26. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v
+27. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v' to AST representation.
 Replacing existing blackbox module `\VCC' at /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:24.1-26.10.
 Generating RTLIL representation for module `\VCC'.
@@ -2417,7 +2424,7 @@ Replacing existing blackbox module `\RAMB36E1' at /home/joe/opt/symbiflow/xc7/co
 Generating RTLIL representation for module `\RAMB36E1'.
 Successfully finished Verilog frontend.
 
-27. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v
+28. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v' to AST representation.
 Replacing existing blackbox module `\RAMB16_S1' at /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_xtra.v:3.1-79.10.
 Generating RTLIL representation for module `\RAMB16_S1'.
@@ -3037,7 +3044,7 @@ Replacing existing blackbox module `\FE' at /home/joe/opt/symbiflow/xc7/conda/en
 Generating RTLIL representation for module `\FE'.
 Successfully finished Verilog frontend.
 
-28. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v
+29. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v' to AST representation.
 Replacing existing blackbox module `\CE_VCC' at /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_sim.v:4.1-6.10.
 Generating RTLIL representation for module `\CE_VCC'.
@@ -3141,7 +3148,7 @@ Replacing existing blackbox module `\PCIE_2_1_VPR' at /home/joe/opt/symbiflow/xc
 Generating RTLIL representation for module `\PCIE_2_1_VPR'.
 Successfully finished Verilog frontend.
 
-29. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v
+30. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v' to AST representation.
 Replacing existing blackbox module `\IBUF' at /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/iobs.v:1.1-17.10.
 Generating RTLIL representation for module `\IBUF'.
@@ -3167,25 +3174,25 @@ Replacing existing blackbox module `\GTPE2_CHANNEL' at /home/joe/opt/symbiflow/x
 Generating RTLIL representation for module `\GTPE2_CHANNEL'.
 Successfully finished Verilog frontend.
 
-30. Executing HIERARCHY pass (managing design hierarchy).
+31. Executing HIERARCHY pass (managing design hierarchy).
 
-30.1. Analyzing design hierarchy..
+31.1. Analyzing design hierarchy..
 Top module:  \nand_gate
 
-30.2. Analyzing design hierarchy..
+31.2. Analyzing design hierarchy..
 Top module:  \nand_gate
 Removed 0 unused modules.
 
-31. Executing RTLIL backend.
+32. Executing RTLIL backend.
 Output filename: nand_gate.json.pre_abc9.ilang
 
-32. Executing SYNTH_XILINX pass.
+33. Executing SYNTH_XILINX pass.
 
-32.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+33.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 
-32.2. Executing TECHMAP pass (map to technology primitives).
+33.2. Executing TECHMAP pass (map to technology primitives).
 
-32.2.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v
+33.2.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/ff_map.v' to AST representation.
 Generating RTLIL representation for module `\$_DFFE_NP0P_'.
 Generating RTLIL representation for module `\$_DFFE_PP0P_'.
@@ -3205,61 +3212,61 @@ Generating RTLIL representation for module `\$_DLATCH_NPP_'.
 Generating RTLIL representation for module `\$_DLATCH_PPP_'.
 Successfully finished Verilog frontend.
 
-32.2.2. Continuing TECHMAP pass.
+33.2.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-32.3. Executing OPT_EXPR pass (perform const folding).
+33.3. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-32.4. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/abc9_model.v
+33.4. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/abc9_model.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/abc9_model.v' to AST representation.
 Generating RTLIL representation for module `$__XILINX_MUXF78'.
 Successfully finished Verilog frontend.
 
-32.5. Executing ABC9 pass.
+33.5. Executing ABC9 pass.
 
-32.5.1. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.1. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.2. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.2. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.3. Executing SCC pass (detecting logic loops).
+33.5.3. Executing SCC pass (detecting logic loops).
 Found 0 SCCs in module nand_gate.
 Found 0 SCCs.
 
-32.5.4. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.4. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.5. Executing PROC pass (convert processes to netlists).
+33.5.5. Executing PROC pass (convert processes to netlists).
 
-32.5.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+33.5.5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-32.5.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+33.5.5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Removed a total of 0 dead cases.
 
-32.5.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+33.5.5.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
 Promoted 0 assignments to connections.
 
-32.5.5.4. Executing PROC_INIT pass (extract init attributes).
+33.5.5.4. Executing PROC_INIT pass (extract init attributes).
 
-32.5.5.5. Executing PROC_ARST pass (detect async resets in processes).
+33.5.5.5. Executing PROC_ARST pass (detect async resets in processes).
 
-32.5.5.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+33.5.5.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
 
-32.5.5.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+33.5.5.7. Executing PROC_DLATCH pass (convert process syncs to latches).
 
-32.5.5.8. Executing PROC_DFF pass (convert process syncs to FFs).
+33.5.5.8. Executing PROC_DFF pass (convert process syncs to FFs).
 
-32.5.5.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+33.5.5.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
-32.5.5.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+33.5.5.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-32.5.5.11. Executing OPT_EXPR pass (perform const folding).
+33.5.5.11. Executing OPT_EXPR pass (perform const folding).
 
-32.5.6. Executing TECHMAP pass (map to technology primitives).
+33.5.6. Executing TECHMAP pass (map to technology primitives).
 
-32.5.6.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
+33.5.6.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/techmap.v' to AST representation.
 Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
 Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
@@ -3286,43 +3293,43 @@ Generating RTLIL representation for module `\_90_pmux'.
 Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
-32.5.6.2. Continuing TECHMAP pass.
+33.5.6.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-32.5.7. Executing OPT pass (performing simple optimizations).
+33.5.7. Executing OPT pass (performing simple optimizations).
 
-32.5.7.1. Executing OPT_EXPR pass (perform const folding).
+33.5.7.1. Executing OPT_EXPR pass (perform const folding).
 
-32.5.7.2. Executing OPT_MERGE pass (detect identical cells).
+33.5.7.2. Executing OPT_MERGE pass (detect identical cells).
 Removed a total of 0 cells.
 
-32.5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+33.5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Removed 0 multiplexer ports.
 
-32.5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+33.5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
 Performed a total of 0 changes.
 
-32.5.7.5. Executing OPT_MERGE pass (detect identical cells).
+33.5.7.5. Executing OPT_MERGE pass (detect identical cells).
 Removed a total of 0 cells.
 
-32.5.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+33.5.7.6. Executing OPT_DFF pass (perform DFF optimizations).
 
-32.5.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+33.5.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 
-32.5.7.8. Executing OPT_EXPR pass (perform const folding).
+33.5.7.8. Executing OPT_EXPR pass (perform const folding).
 
-32.5.7.9. Finished OPT passes. (There is nothing left to do.)
+33.5.7.9. Finished OPT passes. (There is nothing left to do.)
 
-32.5.8. Executing TECHMAP pass (map to technology primitives).
+33.5.8. Executing TECHMAP pass (map to technology primitives).
 
-32.5.8.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_map.v
+33.5.8.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_map.v' to AST representation.
 Successfully finished Verilog frontend.
 
-32.5.8.2. Continuing TECHMAP pass.
+33.5.8.2. Continuing TECHMAP pass.
 No more expansions possible.
 
-32.5.9. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_model.v
+33.5.9. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_model.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_model.v' to AST representation.
 Generating RTLIL representation for module `$__ABC9_DELAY'.
 Generating RTLIL representation for module `$__ABC9_SCC_BREAKER'.
@@ -3330,29 +3337,29 @@ Generating RTLIL representation for module `$__DFF_N__$abc9_flop'.
 Generating RTLIL representation for module `$__DFF_P__$abc9_flop'.
 Successfully finished Verilog frontend.
 
-32.5.10. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.10. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.11. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.11. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.12. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.12. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.13. Executing AIGMAP pass (map logic to AIG).
+33.5.13. Executing AIGMAP pass (map logic to AIG).
 Module nand_gate: replaced 0 cells with 0 new cells, skipped 4 cells.
   not replaced 3 cell types:
        2 IBUF
        1 OBUF
        1 LUT2
 
-32.5.13.1. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.13.1. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.13.2. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.13.2. Executing ABC9_OPS pass (helper functions for ABC9).
 
-32.5.13.3. Executing XAIGER backend.
+33.5.13.3. Executing XAIGER backend.
 Extracted 0 AND gates and 8 wires from module `nand_gate' to a netlist network with 6 inputs and 4 outputs.
 
-32.5.13.4. Executing ABC9_EXE pass (technology mapping using ABC9).
+33.5.13.4. Executing ABC9_EXE pass (technology mapping using ABC9).
 
-32.5.13.5. Executing ABC9.
+33.5.13.5. Executing ABC9.
 Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
 ABC: ABC command line: "source <abc-temp-dir>/abc.script".
 ABC: 
@@ -3390,55 +3397,55 @@ ABC: + &write -n <abc-temp-dir>/output.aig
 ABC: + time 
 ABC: elapse: 0.00 seconds, total: 0.00 seconds
 
-32.5.13.6. Executing AIGER frontend.
+33.5.13.6. Executing AIGER frontend.
 Removed 0 unused cells and 12 unused wires.
 
-32.5.13.7. Executing ABC9_OPS pass (helper functions for ABC9).
+33.5.13.7. Executing ABC9_OPS pass (helper functions for ABC9).
 ABC RESULTS:           input signals:        2
 ABC RESULTS:          output signals:        3
 Removing temp directory.
 
-32.5.14. Executing TECHMAP pass (map to technology primitives).
+33.5.14. Executing TECHMAP pass (map to technology primitives).
 
-32.5.14.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_unmap.v
+33.5.14.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_unmap.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/abc9_unmap.v' to AST representation.
 Generating RTLIL representation for module `\$__DFF_x__$abc9_flop'.
 Generating RTLIL representation for module `\$__ABC9_SCC_BREAKER'.
 Successfully finished Verilog frontend.
 
-32.5.14.2. Continuing TECHMAP pass.
+33.5.14.2. Continuing TECHMAP pass.
 No more expansions possible.
 Removed 0 unused cells and 5 unused wires.
 
-32.6. Executing TECHMAP pass (map to technology primitives).
+33.6. Executing TECHMAP pass (map to technology primitives).
 
-32.6.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v
+33.6.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v' to AST representation.
 Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
-32.6.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
+33.6.2. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
 Generating RTLIL representation for module `\$__SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_SHREG_'.
 Generating RTLIL representation for module `\$__XILINX_MUXF78'.
 Successfully finished Verilog frontend.
 
-32.6.3. Continuing TECHMAP pass.
+33.6.3. Continuing TECHMAP pass.
 No more expansions possible.
 
-32.7. Executing XILINX_DFFOPT pass (optimize FF control signal usage).
+33.7. Executing XILINX_DFFOPT pass (optimize FF control signal usage).
 Optimizing FFs in nand_gate.
 
-32.8. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+33.8. Executing OPT_LUT_INS pass (discard unused LUT inputs).
 Optimizing LUTs in nand_gate.
 
-33. Executing RTLIL backend.
+34. Executing RTLIL backend.
 Output filename: nand_gate.json.post_abc9.ilang
 
-34. Executing TECHMAP pass (map to technology primitives).
+35. Executing TECHMAP pass (map to technology primitives).
 
-34.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v
+35.1. Executing Verilog-2005 frontend: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v
 Parsing Verilog input from `/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v' to AST representation.
 Generating RTLIL representation for module `\CESR_MUX'.
 Generating RTLIL representation for module `\FD'.
@@ -3504,31 +3511,31 @@ Generating RTLIL representation for module `\GTPE2_CHANNEL'.
 Generating RTLIL representation for module `\PCIE_2_1'.
 Successfully finished Verilog frontend.
 
-34.2. Continuing TECHMAP pass.
-Using template $paramod$74a5ce2abe947aeb18cfa51c168789d8e5953477\IBUF for cells of type IBUF.
-Using template $paramod$7b570ccc18a9e6887c7e82cf012c19266ea7581b\IBUF for cells of type IBUF.
+35.2. Continuing TECHMAP pass.
+Using template $paramod$14e4b160e5650c7466f5ebab2a840ca7b5ea20ca\IBUF for cells of type IBUF.
+Using template $paramod$ce61588f15e97e90d6d2d002d4cd76bac8ffda26\IBUF for cells of type IBUF.
 Using template $paramod\LUT2\INIT=4'0111 for cells of type LUT2.
-Using template $paramod$ed3948249ed1e4b92781a66f23685e28f863a055\OBUF for cells of type OBUF.
-Using template $paramod$99805bbf912524ff8e81b942c1ebabb0b79073ef\OBUFT for cells of type OBUFT.
+Using template $paramod$8910dd92471fefb6c2d4fbbdf0cc4292ad8c0b6a\OBUF for cells of type OBUF.
+Using template $paramod$2e166e0b3f0b847394e0cdca803b933b89203e42\OBUFT for cells of type OBUFT.
 No more expansions possible.
 
-35. Executing OPT_EXPR pass (perform const folding).
+36. Executing OPT_EXPR pass (perform const folding).
 Optimizing module nand_gate.
 
-36. Executing OPT_CLEAN pass (remove unused cells and wires).
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \nand_gate..
 Removed 0 unused cells and 12 unused wires.
 
-37. Executing SETUNDEF pass (replace undef values with defined constants).
+38. Executing SETUNDEF pass (replace undef values with defined constants).
 
-38. Printing statistics.
+39. Printing statistics.
 
 === nand_gate ===
 
    Number of wires:                  6
    Number of wire bits:              7
-   Number of public wires:           4
-   Number of public wire bits:       4
+   Number of public wires:           3
+   Number of public wire bits:       3
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -3538,12 +3545,12 @@ Removed 0 unused cells and 12 unused wires.
      OBUFT_VPR                       1
      T_INV                           1
 
-39. Executing ATTRMAP pass (move or copy attributes).
+40. Executing ATTRMAP pass (move or copy attributes).
 
-40. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+41. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Cleaned up 0 empty switches.
 
-41. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+42. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225 in module FDCE.
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:731$2228 in module FDCE_1.
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:769$2243 in module FDPE.
@@ -3560,11 +3567,11 @@ Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/
 Marked 1 switch rules as full_case in process $proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:1606$2392 in module RAM64X1D.
 Removed a total of 0 dead cases.
 
-42. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+43. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
 Promoted 75 assignments to connections.
 
-43. Executing PROC_INIT pass (extract init attributes).
+44. Executing PROC_INIT pass (extract init attributes).
 Found init rule in `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:0$2227'.
   Set init value: \Q = 1'0
 Found init rule in `\FDCE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:0$2231'.
@@ -3616,13 +3623,13 @@ Found init rule in `\SRLC16E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bi
 Found init rule in `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2400$2792'.
   Set init value: \r = 0
 
-44. Executing PROC_ARST pass (detect async resets in processes).
+45. Executing PROC_ARST pass (detect async resets in processes).
 Found async reset \CLR in `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225'.
 Found async reset \CLR in `\FDCE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:731$2228'.
 Found async reset \PRE in `\FDPE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:769$2243'.
 Found async reset \PRE in `\FDPE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:810$2246'.
 
-45. Executing PROC_MUX pass (convert decision trees to multiplexers).
+46. Executing PROC_MUX pass (convert decision trees to multiplexers).
 Creating decoders for process `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:0$2227'.
 Creating decoders for process `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225'.
      1/1: $0\Q[0:0]
@@ -3715,9 +3722,9 @@ Creating decoders for process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/
 Creating decoders for process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$2791'.
      1/1: $0\r[31:0]
 
-46. Executing PROC_DLATCH pass (convert process syncs to latches).
+47. Executing PROC_DLATCH pass (convert process syncs to latches).
 
-47. Executing PROC_DFF pass (convert process syncs to FFs).
+48. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\FDCE.\Q' using process `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225'.
   created $adff cell `$procdff$3405' with positive edge clock and positive level reset.
 Creating register for signal `\FDCE_1.\Q' using process `\FDCE_1.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:731$2228'.
@@ -3841,9 +3848,9 @@ Creating register for signal `\SRLC16E.\r' using process `\SRLC16E.$proc$/home/j
 Creating register for signal `\SRLC32E.\r' using process `\SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$2791'.
   created $dff cell `$procdff$3465' with positive edge clock.
 
-48. Executing PROC_MEMWR pass (convert process memory writes to cells).
+49. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
-49. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+50. Executing PROC_CLEAN pass (remove empty switches from decision trees).
 Removing empty process `FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:0$2227'.
 Found and cleaned up 1 empty switch in `\FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225'.
 Removing empty process `FDCE.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:690$2225'.
@@ -3907,12 +3914,12 @@ Found and cleaned up 1 empty switch in `\SRLC32E.$proc$/home/joe/opt/symbiflow/x
 Removing empty process `SRLC32E.$proc$/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/cells_sim.v:2408$2791'.
 Cleaned up 21 empty switches.
 
-50. Executing JSON backend.
+51. Executing JSON backend.
 
-51. Executing Verilog backend.
+52. Executing Verilog backend.
 Dumping module `\nand_gate'.
 
 Warnings: 3 unique messages, 4 total
-End of script. Logfile hash: 004b5c5584, CPU: user 8.40s system 0.18s, MEM: 356.86 MB peak
+End of script. Logfile hash: 341a659e43, CPU: user 8.34s system 0.16s, MEM: 356.89 MB peak
 Yosys 0.13+3 (git sha1 61324cf55, x86_64-conda_cos6-linux-gnu-gcc 1.24.0.133_b0863d8_dirty -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/home/runner/work/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1642201854658/work=/usr/local/src/conda/yosys-0.13_4_g61324cf55 -fdebug-prefix-map=/home/joe/opt/symbiflow/xc7/conda/envs/xc7=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
-Time spent: 53% 44x read_verilog (5 sec), 8% 1x tcl (0 sec), ...
+Time spent: 53% 46x read_verilog (5 sec), 8% 1x tcl (0 sec), ...

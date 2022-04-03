@@ -2,50 +2,49 @@
 
 (* hdlname = "\\nand_gate" *)
 (* top =  1  *)
-(* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.1-7.10" *)
-module nand_gate(input_1, input_2, and_result);
+(* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.1-6.10" *)
+module nand_gate(in_a, in_b, out);
+  wire _0_;
   (* force_downto = 32'd1 *)
   (* src = "/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v:30.21-30.22" *)
-  wire [1:0] _0_;
-  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:3.26-3.36" *)
-  output and_result;
-  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:4.10-4.18" *)
-  wire and_temp;
-  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.25-1.32" *)
-  input input_1;
-  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:2.25-2.32" *)
-  input input_2;
+  wire [1:0] _1_;
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.25-1.29" *)
+  input in_a;
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:2.25-2.29" *)
+  input in_b;
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:3.26-3.29" *)
+  output out;
   (* module_not_derived = 32'd1 *)
   (* src = "/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v:43.26-44.30" *)
   LUT2 #(
     .INIT(4'h7)
-  ) _1_ (
-    .I0(_0_[0]),
-    .I1(_0_[1]),
-    .O(and_temp)
+  ) _2_ (
+    .I0(_1_[0]),
+    .I1(_1_[1]),
+    .O(_0_)
+  );
+  (* keep = 32'd1 *)
+  IBUF #(
+    .IOSTANDARD("LVCMOS33"),
+    .IO_LOC_PAIRS("in_a:V16")
+  ) _3_ (
+    .I(in_a),
+    .O(_1_[0])
+  );
+  (* keep = 32'd1 *)
+  IBUF #(
+    .IOSTANDARD("LVCMOS33"),
+    .IO_LOC_PAIRS("in_b:V17")
+  ) _4_ (
+    .I(in_b),
+    .O(_1_[1])
   );
   (* keep = 32'd1 *)
   OBUF #(
     .IOSTANDARD("LVCMOS33"),
-    .IO_LOC_PAIRS("and_result:U16")
-  ) _2_ (
-    .I(and_temp),
-    .O(and_result)
-  );
-  (* keep = 32'd1 *)
-  IBUF #(
-    .IOSTANDARD("LVCMOS33"),
-    .IO_LOC_PAIRS("input_1:V16")
-  ) _3_ (
-    .I(input_1),
-    .O(_0_[0])
-  );
-  (* keep = 32'd1 *)
-  IBUF #(
-    .IOSTANDARD("LVCMOS33"),
-    .IO_LOC_PAIRS("input_2:V17")
-  ) _4_ (
-    .I(input_2),
-    .O(_0_[1])
+    .IO_LOC_PAIRS("out:U16")
+  ) _5_ (
+    .I(_0_),
+    .O(out)
   );
 endmodule

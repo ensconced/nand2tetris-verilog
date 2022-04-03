@@ -1,9 +1,9 @@
-Placement_File: nand_gate.place Placement_ID: SHA256:f7081312dd0135371d8e49efd67974682d43efd04cfe704e247d8c2bb6228861
+Placement_File: nand_gate.place Placement_ID: SHA256:e08eb472b4c693938d85500f0e938c84a695b3a6f2415736a05c97c3249cbf65
 Array size: 117 x 162 logic blocks.
 
 Routing:
 
-Net 0 (and_temp)
+Net 0 ($abc$1572$iopadmap$out)
 
 Node:	2408424	SOURCE (11,151)  Class: 77  Switch: 0
 Node:	2408514	  OPIN (11,151)  Pin: 77   BLK-TL-SLICEL.AMUX[0] Switch: 189

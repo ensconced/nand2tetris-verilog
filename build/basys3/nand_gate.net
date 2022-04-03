@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<block name="nand_gate.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:3d21117a59a4771d96663b8b74b651f1b5c85530b8782fec0fe24f8ca4276873" atom_netlist_id="SHA256:0b3ab524a2fa78a33a9ef9978492f4ea660e9c089073ab0c88709f8465b164f3">
-	<inputs>input_1 input_2</inputs>
-	<outputs>out:and_result</outputs>
+<block name="nand_gate.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:3d21117a59a4771d96663b8b74b651f1b5c85530b8782fec0fe24f8ca4276873" atom_netlist_id="SHA256:d222bbfe34421d82574cccfbb3bc6a34307a12a81f5469c1efdb8192f82ae74e">
+	<inputs>in_a in_b</inputs>
+	<outputs>out:out</outputs>
 	<clocks></clocks>
-	<block name="$iopadmap$nand_gate.and_result.genblk1.t_inv" instance="BLK-TL-IOPAD[0]" mode="default">
+	<block name="$iopadmap$nand_gate.out.genblk1.t_inv" instance="BLK-TL-IOPAD[0]" mode="default">
 		<inputs>
 			<port name="IDELAYE2_C">open</port>
 			<port name="IDELAYE2_CE">open</port>
@@ -30,7 +30,7 @@
 			<port name="IOB33_KEEPER_INT_EN">open</port>
 			<port name="IOB33_PD_INT_EN">open</port>
 			<port name="IOB33_PU_INT_EN">open</port>
-			<port name="OLOGICE3_D1">and_temp</port>
+			<port name="OLOGICE3_D1">$abc$1572$iopadmap$out</port>
 			<port name="OLOGICE3_D2">open</port>
 			<port name="OLOGICE3_D3">open</port>
 			<port name="OLOGICE3_D4">open</port>
@@ -92,7 +92,7 @@
 		</clocks>
 		<block name="open" instance="IDELAYE2[0]" />
 		<block name="open" instance="ILOGICE3[0]" />
-		<block name="$iopadmap$nand_gate.and_result.obuft" instance="IOB33[0]" mode="default">
+		<block name="$iopadmap$nand_gate.out.obuft" instance="IOB33[0]" mode="default">
 			<inputs>
 				<port name="DIFFI_IN">open</port>
 				<port name="DIFFO_IN">open</port>
@@ -112,7 +112,7 @@
 				<port name="T_OUT">open</port>
 			</outputs>
 			<clocks />
-			<block name="$iopadmap$nand_gate.and_result.obuft" instance="IOB33_MODES[0]" mode="OBUFT">
+			<block name="$iopadmap$nand_gate.out.obuft" instance="IOB33_MODES[0]" mode="OBUFT">
 				<inputs>
 					<port name="IBUFDISABLE">open</port>
 					<port name="INTERMDISABLE">open</port>
@@ -126,7 +126,7 @@
 					<port name="I">open</port>
 				</outputs>
 				<clocks />
-				<block name="$iopadmap$nand_gate.and_result.obuft" instance="OBUFT_VPR[0]">
+				<block name="$iopadmap$nand_gate.out.obuft" instance="OBUFT_VPR[0]">
 					<attributes>
 						<attribute name="src">"/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1940.5-1944.4|/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:2083.5-2087.4"</attribute>
 						<attribute name="module_not_derived">00000000000000000000000000000001</attribute>
@@ -149,7 +149,7 @@
 						<parameter name="LVCMOS12_DRIVE_I4">0</parameter>
 						<parameter name="DRIVE">00000000000000000000000000001100</parameter>
 						<parameter name="LVCMOS15_SSTL15_DRIVE_I16_I_FIXED">0</parameter>
-						<parameter name="IO_LOC_PAIRS">"and_result:U16"</parameter>
+						<parameter name="IO_LOC_PAIRS">"out:U16"</parameter>
 						<parameter name="LVCMOS15_LVCMOS18_LVCMOS25_DRIVE_I4">0</parameter>
 						<parameter name="LVCMOS18_DRIVE_I16">0</parameter>
 						<parameter name="LVCMOS33_DRIVE_I16">0</parameter>
@@ -169,11 +169,11 @@
 						<port name="T">IOB33_MODES.T[0]-&gt;IOB33_MODES.T_to_OBUFT_VPR.T</port>
 					</inputs>
 					<outputs>
-						<port name="O">and_result</port>
+						<port name="O">out</port>
 					</outputs>
 					<clocks />
 				</block>
-				<block name="out:and_result" instance="outpad[0]">
+				<block name="out:out" instance="outpad[0]">
 					<attributes />
 					<parameters />
 					<inputs>
@@ -184,7 +184,7 @@
 				</block>
 			</block>
 		</block>
-		<block name="$iopadmap$nand_gate.and_result.genblk1.t_inv" instance="OLOGICE3[0]" mode="OLOGIC">
+		<block name="$iopadmap$nand_gate.out.genblk1.t_inv" instance="OLOGICE3[0]" mode="OLOGIC">
 			<inputs>
 				<port name="CLK">open</port>
 				<port name="CLKB">open</port>
@@ -222,7 +222,7 @@
 				<port name="TQ">OLOGIC_TFF[0].TQ[0]-&gt;OLOGIC_TFF.TQ_to_OLOGICE3.TQ</port>
 			</outputs>
 			<clocks />
-			<block name="$iopadmap$nand_gate.and_result.genblk1.t_inv" instance="OLOGIC_TFF[0]" mode="T_INV">
+			<block name="$iopadmap$nand_gate.out.genblk1.t_inv" instance="OLOGIC_TFF[0]" mode="T_INV">
 				<inputs>
 					<port name="CLK">open</port>
 					<port name="SR">open</port>
@@ -235,7 +235,7 @@
 					<port name="TQ">T_INV[0].TO[0]-&gt;TO</port>
 				</outputs>
 				<clocks />
-				<block name="$iopadmap$nand_gate.and_result.genblk1.t_inv" instance="T_INV[0]">
+				<block name="$iopadmap$nand_gate.out.genblk1.t_inv" instance="T_INV[0]">
 					<attributes>
 						<attribute name="src">"/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1940.5-1944.4|/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1969.11-1972.6"</attribute>
 						<attribute name="module_not_derived">00000000000000000000000000000001</attribute>
@@ -245,7 +245,7 @@
 						<port name="TI">OLOGIC_TFF.T1[0]-&gt;TI</port>
 					</inputs>
 					<outputs>
-						<port name="TO">$iopadmap$nand_gate.and_result.t</port>
+						<port name="TO">$iopadmap$nand_gate.out.t</port>
 					</outputs>
 					<clocks />
 				</block>
@@ -266,7 +266,7 @@
 			</block>
 		</block>
 	</block>
-	<block name="and_temp" instance="BLK-TL-SLICEL[1]" mode="default">
+	<block name="$abc$1572$iopadmap$out" instance="BLK-TL-SLICEL[1]" mode="default">
 		<inputs>
 			<port name="A1">open</port>
 			<port name="A2">$techmap1577$abc$1572$auto$blifparse.cc:515:parse_blif$1573.A[1]</port>
@@ -318,7 +318,7 @@
 		<clocks>
 			<port name="CLK">open</port>
 		</clocks>
-		<block name="and_temp" instance="SLICEL0[0]" mode="default">
+		<block name="$abc$1572$iopadmap$out" instance="SLICEL0[0]" mode="default">
 			<inputs>
 				<port name="A1">open</port>
 				<port name="A2">BLK-TL-SLICEL.A2[0]-&gt;BLK-TL-SLICEL.A2_to_SLICEL0.A2</port>
@@ -370,7 +370,7 @@
 			<clocks>
 				<port name="CLK">open</port>
 			</clocks>
-			<block name="and_temp" instance="COMMON_LUT_AND_F78MUX[0]" mode="default">
+			<block name="$abc$1572$iopadmap$out" instance="COMMON_LUT_AND_F78MUX[0]" mode="default">
 				<inputs>
 					<port name="A1">open</port>
 					<port name="A2">SLICEL0.A2[0]-&gt;A2</port>
@@ -414,7 +414,7 @@
 					<port name="F8MUX_O">open</port>
 				</outputs>
 				<clocks />
-				<block name="and_temp" instance="ALUT[0]" mode="ALUT-LUT5_MUX">
+				<block name="$abc$1572$iopadmap$out" instance="ALUT[0]" mode="ALUT-LUT5_MUX">
 					<inputs>
 						<port name="A1">open</port>
 						<port name="A2">COMMON_LUT_AND_F78MUX.A2[0]-&gt;A2</port>
@@ -429,7 +429,7 @@
 					</outputs>
 					<clocks />
 					<block name="open" instance="A5LUT[0]" />
-					<block name="and_temp" instance="A5LUT[1]" mode="A5LUT">
+					<block name="$abc$1572$iopadmap$out" instance="A5LUT[1]" mode="A5LUT">
 						<inputs>
 							<port name="in">open ALUT.A2[0]-&gt;ALUT_A2_1 ALUT.A3[0]-&gt;ALUT_A3_1 open open</port>
 						</inputs>
@@ -437,7 +437,7 @@
 							<port name="out">lut[0].out[0]-&gt;direct:A5LUT</port>
 						</outputs>
 						<clocks />
-						<block name="and_temp" instance="lut[0]">
+						<block name="$abc$1572$iopadmap$out" instance="lut[0]">
 							<attributes />
 							<parameters />
 							<inputs>
@@ -445,7 +445,7 @@
 								<port_rotation_map name="in">open 0 1 open open</port_rotation_map>
 							</inputs>
 							<outputs>
-								<port name="out">and_temp</port>
+								<port name="out">$abc$1572$iopadmap$out</port>
 							</outputs>
 							<clocks />
 						</block>
@@ -507,7 +507,7 @@
 			</block>
 		</block>
 	</block>
-	<block name="input_1" instance="BLK-TL-IOPAD[2]" mode="default">
+	<block name="in_a" instance="BLK-TL-IOPAD[2]" mode="default">
 		<inputs>
 			<port name="IDELAYE2_C">open</port>
 			<port name="IDELAYE2_CE">open</port>
@@ -633,7 +633,7 @@
 				<port name="OCLKB">open</port>
 			</clocks>
 		</block>
-		<block name="input_1" instance="IOB33[0]" mode="default">
+		<block name="in_a" instance="IOB33[0]" mode="default">
 			<inputs>
 				<port name="DIFFI_IN">open</port>
 				<port name="DIFFO_IN">open</port>
@@ -653,7 +653,7 @@
 				<port name="T_OUT">open</port>
 			</outputs>
 			<clocks />
-			<block name="input_1" instance="IOB33_MODES[0]" mode="IBUF">
+			<block name="in_a" instance="IOB33_MODES[0]" mode="IBUF">
 				<inputs>
 					<port name="IBUFDISABLE">open</port>
 					<port name="INTERMDISABLE">open</port>
@@ -667,7 +667,7 @@
 					<port name="I">IBUF_VPR[0].O[0]-&gt;IBUF_VPR.O_to_IOB33_MODES.I</port>
 				</outputs>
 				<clocks />
-				<block name="$iopadmap$nand_gate.input_1" instance="IBUF_VPR[0]">
+				<block name="$iopadmap$nand_gate.in_a" instance="IBUF_VPR[0]">
 					<attributes>
 						<attribute name="src">"/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1916.5-1919.4"</attribute>
 						<attribute name="keep">00000000000000000000000000000001</attribute>
@@ -687,7 +687,7 @@
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_LVCMOS25_LVCMOS33_LVDS_25_LVTTL_SSTL135_SSTL15_TMDS_33_IN_ONLY">1</parameter>
 						<parameter name="IN_TERM_UNTUNED_SPLIT_40">0</parameter>
 						<parameter name="PULLTYPE_NONE">1</parameter>
-						<parameter name="IO_LOC_PAIRS">"input_1:V16"</parameter>
+						<parameter name="IO_LOC_PAIRS">"in_a:V16"</parameter>
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_IN">0</parameter>
 						<parameter name="IOSTANDARD">"LVCMOS33"</parameter>
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_SSTL135_SSTL15_STEPDOWN">0</parameter>
@@ -700,12 +700,12 @@
 					</outputs>
 					<clocks />
 				</block>
-				<block name="input_1" instance="inpad[0]">
+				<block name="in_a" instance="inpad[0]">
 					<attributes />
 					<parameters />
 					<inputs />
 					<outputs>
-						<port name="inpad">input_1</port>
+						<port name="inpad">in_a</port>
 					</outputs>
 					<clocks />
 				</block>
@@ -713,7 +713,7 @@
 		</block>
 		<block name="open" instance="OLOGICE3[0]" />
 	</block>
-	<block name="input_2" instance="BLK-TL-IOPAD[3]" mode="default">
+	<block name="in_b" instance="BLK-TL-IOPAD[3]" mode="default">
 		<inputs>
 			<port name="IDELAYE2_C">open</port>
 			<port name="IDELAYE2_CE">open</port>
@@ -839,7 +839,7 @@
 				<port name="OCLKB">open</port>
 			</clocks>
 		</block>
-		<block name="input_2" instance="IOB33[0]" mode="default">
+		<block name="in_b" instance="IOB33[0]" mode="default">
 			<inputs>
 				<port name="DIFFI_IN">open</port>
 				<port name="DIFFO_IN">open</port>
@@ -859,7 +859,7 @@
 				<port name="T_OUT">open</port>
 			</outputs>
 			<clocks />
-			<block name="input_2" instance="IOB33_MODES[0]" mode="IBUF">
+			<block name="in_b" instance="IOB33_MODES[0]" mode="IBUF">
 				<inputs>
 					<port name="IBUFDISABLE">open</port>
 					<port name="INTERMDISABLE">open</port>
@@ -873,7 +873,7 @@
 					<port name="I">IBUF_VPR[0].O[0]-&gt;IBUF_VPR.O_to_IOB33_MODES.I</port>
 				</outputs>
 				<clocks />
-				<block name="$iopadmap$nand_gate.input_2" instance="IBUF_VPR[0]">
+				<block name="$iopadmap$nand_gate.in_b" instance="IBUF_VPR[0]">
 					<attributes>
 						<attribute name="src">"/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1916.5-1919.4"</attribute>
 						<attribute name="keep">00000000000000000000000000000001</attribute>
@@ -893,7 +893,7 @@
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_LVCMOS25_LVCMOS33_LVDS_25_LVTTL_SSTL135_SSTL15_TMDS_33_IN_ONLY">1</parameter>
 						<parameter name="IN_TERM_UNTUNED_SPLIT_40">0</parameter>
 						<parameter name="PULLTYPE_NONE">1</parameter>
-						<parameter name="IO_LOC_PAIRS">"input_2:V17"</parameter>
+						<parameter name="IO_LOC_PAIRS">"in_b:V17"</parameter>
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_IN">0</parameter>
 						<parameter name="IOSTANDARD">"LVCMOS33"</parameter>
 						<parameter name="LVCMOS12_LVCMOS15_LVCMOS18_SSTL135_SSTL15_STEPDOWN">0</parameter>
@@ -906,12 +906,12 @@
 					</outputs>
 					<clocks />
 				</block>
-				<block name="input_2" instance="inpad[0]">
+				<block name="in_b" instance="inpad[0]">
 					<attributes />
 					<parameters />
 					<inputs />
 					<outputs>
-						<port name="inpad">input_2</port>
+						<port name="inpad">in_b</port>
 					</outputs>
 					<clocks />
 				</block>

@@ -839,7 +839,7 @@ Warning 817: Model 'VCC' output port 'VCC' has no timing specification (no clock
 Warning 818: Model 'GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
 Warning 819: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'D' of model '.latch', port is a sequential input but has neither T_setup nor T_hold specified
 Warning 820: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'Q' of model '.latch', port is a sequential output but has neither min nor max T_clock_to_Q specified
-# Loading Architecture Description took 1.32 seconds (max_rss 59.7 MiB, delta_rss +54.3 MiB)
+# Loading Architecture Description took 1.31 seconds (max_rss 59.5 MiB, delta_rss +54.0 MiB)
 
 Warning 821: Non-zero switch output capacitance (4e-15) has no effect when switch 'buffer' is used for connection block inputs
 Timing analysis: ON
@@ -905,10 +905,10 @@ AnnealSched.type: AUTO_SCHED
 AnnealSched.inner_num: 0.500000
 
 # Building complex block graph
-# Building complex block graph took 0.05 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Building complex block graph took 0.05 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 Circuit file: nand_gate.eblif
 # Load circuit
-# Load circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Load circuit took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 # Clean circuit
 Absorbed 0 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -922,11 +922,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 2
 Swept block(s)      : 2
 Constant Pins Marked: 4
-# Clean circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 9
     .input   :       2
@@ -945,7 +945,7 @@ Circuit Statistics:
   Timing Graph Nodes: 16
   Timing Graph Edges: 15
   Timing Graph Levels: 8
-# Build Timing Graph took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 # Load Timing Constraints
 
@@ -956,13 +956,13 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-# Load Timing Constraints took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 59.5 MiB, delta_rss +0.0 MiB)
 # Load packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'nand_gate.net'.
 Detected 1 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.009187 seconds).
-# Load packing took 0.01 seconds (max_rss 89.5 MiB, delta_rss +29.8 MiB)
+Finished loading packed FPGA netlist file (took 0.009873 seconds).
+# Load packing took 0.01 seconds (max_rss 91.2 MiB, delta_rss +31.7 MiB)
 Warning 822: Netlist contains 0 global net to non-global architecture pin connections
 Warning 823: Logic block #4 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
 
@@ -1183,14 +1183,14 @@ Device Utilization: 0.00 (target 1.00)
 	Physical Tile SYN-GND:
 	Block Utilization: 0.00 Logical Block: SYN-GND
 
-## Build Device Grid took 0.04 seconds (max_rss 89.7 MiB, delta_rss +0.0 MiB)
+## Build Device Grid took 0.04 seconds (max_rss 91.4 MiB, delta_rss +0.0 MiB)
 ## Loading routing resource graph
 
 
-## Loading routing resource graph took 5.12 seconds (max_rss 3299.1 MiB, delta_rss +3209.4 MiB)
+## Loading routing resource graph took 5.02 seconds (max_rss 3298.5 MiB, delta_rss +3207.1 MiB)
   RR Graph Nodes: 2934684
   RR Graph Edges: 22357697
-# Create Device took 5.81 seconds (max_rss 3299.1 MiB, delta_rss +3209.4 MiB)
+# Create Device took 5.71 seconds (max_rss 3298.5 MiB, delta_rss +3207.1 MiB)
 
 # Computing src/opin lookahead
 Warning 824: Found no more sample locations for SOURCE in BLK-TL-BRAM_L
@@ -1227,7 +1227,7 @@ Warning 854: Found no more sample locations for SOURCE in BLK-TL-GTP_CHANNEL_3
 Warning 855: Found no more sample locations for OPIN in BLK-TL-GTP_CHANNEL_3
 Warning 856: Found no more sample locations for SOURCE in BLK-TL-PCIE_BOT
 Warning 857: Found no more sample locations for OPIN in BLK-TL-PCIE_BOT
-# Computing src/opin lookahead took 0.01 seconds (max_rss 3299.1 MiB, delta_rss +0.0 MiB)
+# Computing src/opin lookahead took 0.01 seconds (max_rss 3298.5 MiB, delta_rss +0.0 MiB)
 # Computing chan/ipin lookahead
 Warning 858: Found no sample locations for EMPTY
 Warning 859: Found no sample locations for BLK-TL-CLBLL_L
@@ -1256,11 +1256,11 @@ Warning 881: Found no sample locations for BLK-TL-GTP_CHANNEL_3
 Warning 882: Found no sample locations for BLK-TL-PCIE_BOT
 Warning 883: Found no sample locations for SYN-VCC
 Warning 884: Found no sample locations for SYN-GND
-# Computing chan/ipin lookahead took 0.01 seconds (max_rss 3299.1 MiB, delta_rss +0.0 MiB)
+# Computing chan/ipin lookahead took 0.01 seconds (max_rss 3298.5 MiB, delta_rss +0.0 MiB)
 # Computing placement delta delay look-up
   RR Graph Nodes: 2934684
   RR Graph Edges: 22357697
-# Computing placement delta delay look-up took 0.75 seconds (max_rss 3299.1 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 0.72 seconds (max_rss 3298.5 MiB, delta_rss +0.0 MiB)
 Using simple RL 'Softmax agent' for choosing move types
 Warning 885: CHANX place cost fac is 0 at 0 0
 Warning 886: CHANX place cost fac is 0 at 52 52
@@ -1293,7 +1293,7 @@ Reading constraints.place.
 
 Successfully read constraints file constraints.place.
 
-## Initial Placement took 0.01 seconds (max_rss 3299.1 MiB, delta_rss +0.0 MiB)
+## Initial Placement took 0.01 seconds (max_rss 3298.5 MiB, delta_rss +0.0 MiB)
 
 There are 4 point to point connections in this circuit.
 
@@ -1411,7 +1411,7 @@ Checkpoint saved: bb_costs=2.53519, TD costs=2.39779e-09, CPD=  2.225 (ns)
   83    0.0 1.6e-03   1.000       2.54 2.3974e-09   2.225      -2.22   -2.225   0.000  0.0000    1.0     8.00       332  0.800
   84    0.0 1.3e-03   1.000       2.54 2.3974e-09   2.225      -2.22   -2.225   0.000  0.0000    1.0     8.00       336  0.800
   85    0.0 0.0e+00   0.973       2.54 2.2652e-09   2.225      -2.22   -2.225   0.250  0.0000    1.0     8.00       340  0.800
-## Placement Quench took 0.00 seconds (max_rss 3299.1 MiB)
+## Placement Quench took 0.00 seconds (max_rss 3298.5 MiB)
 post-quench CPD = 2.11422 (ns) 
 
 Completed placement consistency check successfully.
@@ -1464,16 +1464,16 @@ Percentage of different move types:
 	Crit. Uniform move: 3.20 % (acc=18.18 %, rej=27.27 %, aborted=54.55 %)
 	Feasible Region move: 2.62 % (acc=11.11 %, rej=55.56 %, aborted=33.33 %)
 
-Placement Quench timing analysis took 2.085e-05 seconds (1.4955e-05 STA, 5.895e-06 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
-Placement Total  timing analysis took 0.00211071 seconds (0.00146461 STA, 0.000646096 slack) (87 full updates: 87 setup, 0 hold, 0 combined).
+Placement Quench timing analysis took 1.7266e-05 seconds (1.1952e-05 STA, 5.314e-06 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 0.00170225 seconds (0.0011129 STA, 0.000589353 slack) (87 full updates: 87 setup, 0 hold, 0 combined).
 update_td_costs: connections 0 nets 0 sum_nets 0 total 0
-# Placement took 0.01 seconds (max_rss 3299.1 MiB, delta_rss +0.0 MiB)
-Incr Slack updates 87 in 0.00021402 sec
-Full Max Req/Worst Slack updates 32 in 3.0605e-05 sec
-Incr Max Req/Worst Slack updates 55 in 4.4638e-05 sec
-Incr Criticality updates 34 in 8.7959e-05 sec
-Full Criticality updates 53 in 0.00017813 sec
+# Placement took 0.01 seconds (max_rss 3298.5 MiB, delta_rss +0.0 MiB)
+Incr Slack updates 87 in 0.000207385 sec
+Full Max Req/Worst Slack updates 32 in 2.7899e-05 sec
+Incr Max Req/Worst Slack updates 55 in 3.3269e-05 sec
+Incr Criticality updates 34 in 8.2778e-05 sec
+Full Criticality updates 53 in 0.000167939 sec
 
-Flow timing analysis took 0.00211071 seconds (0.00146461 STA, 0.000646096 slack) (87 full updates: 87 setup, 0 hold, 0 combined).
+Flow timing analysis took 0.00170225 seconds (0.0011129 STA, 0.000589353 slack) (87 full updates: 87 setup, 0 hold, 0 combined).
 VPR succeeded
-The entire flow of VPR took 8.08 seconds (max_rss 3299.1 MiB)
+The entire flow of VPR took 7.93 seconds (max_rss 3298.5 MiB)

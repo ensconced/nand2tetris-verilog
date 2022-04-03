@@ -1,7 +1,6 @@
-module nand_gate (input input_1,
-                  input input_2,
-                  output and_result);
-    wire and_temp;
-    assign and_temp   = input_1 ~& input_2;
-    assign and_result = and_temp;
+module nand_gate (input in_a,
+                  input in_b,
+                  output out);
+    wire nand_tmp;
+    assign out = in_a ~& in_b;
 endmodule

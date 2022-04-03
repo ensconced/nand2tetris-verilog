@@ -1,10 +1,10 @@
-Netlist_File: nand_gate.net Netlist_ID: SHA256:b948d2995aa0744777db846450ab20b1776444f7c68f41373079a5c0bc0491d8
+Netlist_File: nand_gate.net Netlist_ID: SHA256:2030e4a8243bbccb43a64f3bb1b739e33db2da737d06b8837cc3a54aba7855b7
 Array size: 117 x 162 logic blocks
 
 #block name	x	y	subblk	block number
 #----------	--	--	------	------------
-$iopadmap$nand_gate.and_result.genblk1.t_inv	2	155	0	#0
-and_temp	11	151	1	#1
-input_1		2	146	0	#2
-input_2		2	147	0	#3
+$iopadmap$nand_gate.out.genblk1.t_inv	2	155	0	#0
+$abc$1572$iopadmap$out	11	151	1	#1
+in_a		2	146	0	#2
+in_b		2	147	0	#3
 $true		1	1	0	#4

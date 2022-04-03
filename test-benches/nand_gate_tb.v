@@ -1,44 +1,44 @@
 `timescale 1 ns/10 ps
 
 module nand_gate_tb;
-    reg input_1, input_2;
+    reg in_a, in_b;
     localparam period = 20;
-    nand_gate UUT (.input_1(input_1), .input_2(input_2), .and_result(and_result));
+    nand_gate UUT (.in_a(in_a), .in_b(in_b), .out(out));
     
     initial
     begin
-        input_1 = 0;
-        input_2 = 0;
+        in_a = 0;
+        in_b = 0;
         #period;
 
-        assert(and_result == 1) else begin
+        assert(out == 1) else begin
             $display("output should be 1 when both inputs are off");
             $fatal(1);
         end;
 
-        input_1 = 0;
-        input_2 = 1;
+        in_a = 0;
+        in_b = 1;
         #period;
         
-        assert(and_result == 1) else begin
-            $display("output should be 1 when input_1 is off and input_2 is on");
+        assert(out == 1) else begin
+            $display("output should be 1 when in_a is off and in_b is on");
             $fatal(1);
         end;
 
-        input_1 = 1;
-        input_2 = 0;
+        in_a = 1;
+        in_b = 0;
         #period;
         
-        assert(and_result == 1) else begin
-            $display("output should be 1 when input_1 is on and input_2 is off");
+        assert(out == 1) else begin
+            $display("output should be 1 when in_a is on and in_b is off");
             $fatal(1);
         end;
 
-        input_1 = 1;
-        input_2 = 1;
+        in_a = 1;
+        in_b = 1;
         #period;
 
-        assert(and_result == 0) else begin
+        assert(out == 0) else begin
             $display("output should be off when both inputs are on");
             $fatal(1);
         end;

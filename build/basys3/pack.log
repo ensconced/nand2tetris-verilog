@@ -839,7 +839,7 @@ Warning 817: Model 'VCC' output port 'VCC' has no timing specification (no clock
 Warning 818: Model 'GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
 Warning 819: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'D' of model '.latch', port is a sequential input but has neither T_setup nor T_hold specified
 Warning 820: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'Q' of model '.latch', port is a sequential output but has neither min nor max T_clock_to_Q specified
-# Loading Architecture Description took 1.32 seconds (max_rss 59.4 MiB, delta_rss +53.8 MiB)
+# Loading Architecture Description took 1.36 seconds (max_rss 59.3 MiB, delta_rss +53.9 MiB)
 
 Warning 821: Non-zero switch output capacitance (4e-15) has no effect when switch 'buffer' is used for connection block inputs
 Timing analysis: ON
@@ -876,10 +876,10 @@ PackerOpts.timing_driven: true
 PackerOpts.target_external_pin_util: auto
 
 # Building complex block graph
-# Building complex block graph took 0.05 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Building complex block graph took 0.05 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Circuit file: nand_gate.eblif
 # Load circuit
-# Load circuit took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Load circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 # Clean circuit
 Absorbed 0 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -893,11 +893,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 2
 Swept block(s)      : 2
 Constant Pins Marked: 4
-# Clean circuit took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 9
     .input   :       2
@@ -916,7 +916,7 @@ Circuit Statistics:
   Timing Graph Nodes: 16
   Timing Graph Edges: 15
   Timing Graph Levels: 8
-# Build Timing Graph took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 # Load Timing Constraints
 
@@ -927,7 +927,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-# Load Timing Constraints took 0.00 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 # Packing
 Begin packing 'nand_gate.eblif'.
 
@@ -975,11 +975,11 @@ BLK-TL-PCIE_2_1          0                                      0               
    SYN-VCC          1                                      0                            1   
    SYN-GND          0                                      0                            0   
 Absorbed logical nets 4 out of 8 nets, 4 nets not absorbed.
-Incr Slack updates 1 in 3.871e-06 sec
-Full Max Req/Worst Slack updates 1 in 1.65e-06 sec
+Incr Slack updates 1 in 3.678e-06 sec
+Full Max Req/Worst Slack updates 1 in 4.57e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 5.645e-06 sec
+Full Criticality updates 1 in 6.116e-06 sec
 FPGA sized to 117 x 162 (xc7a50t-test)
 Device Utilization: 0.00 (target 1.00)
 	Block Utilization: 0.00 Type: BLK-TL-SLICEL
@@ -989,13 +989,13 @@ Device Utilization: 0.00 (target 1.00)
 
 Netlist conversion complete.
 
-# Packing took 0.12 seconds (max_rss 59.4 MiB, delta_rss +0.0 MiB)
+# Packing took 0.12 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 # Load packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'nand_gate.net'.
 Detected 1 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.00974 seconds).
-# Load packing took 0.01 seconds (max_rss 93.4 MiB, delta_rss +33.9 MiB)
+Finished loading packed FPGA netlist file (took 0.009958 seconds).
+# Load packing took 0.01 seconds (max_rss 93.5 MiB, delta_rss +34.2 MiB)
 Warning 822: Netlist contains 0 global net to non-global architecture pin connections
 Warning 823: Logic block #4 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
 
@@ -1216,16 +1216,16 @@ Device Utilization: 0.00 (target 1.00)
 	Physical Tile SYN-GND:
 	Block Utilization: 0.00 Logical Block: SYN-GND
 
-## Build Device Grid took 0.04 seconds (max_rss 93.4 MiB, delta_rss +0.0 MiB)
+## Build Device Grid took 0.04 seconds (max_rss 93.5 MiB, delta_rss +0.0 MiB)
 ## Loading routing resource graph
 
 
-## Loading routing resource graph took 5.12 seconds (max_rss 3298.9 MiB, delta_rss +3205.6 MiB)
+## Loading routing resource graph took 5.00 seconds (max_rss 3299.3 MiB, delta_rss +3205.8 MiB)
   RR Graph Nodes: 2934684
   RR Graph Edges: 22357697
-# Create Device took 5.82 seconds (max_rss 3298.9 MiB, delta_rss +3205.6 MiB)
+# Create Device took 5.69 seconds (max_rss 3299.3 MiB, delta_rss +3205.8 MiB)
 
 
-Flow timing analysis took 4.8735e-05 seconds (3.3651e-05 STA, 1.5084e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Flow timing analysis took 5.5545e-05 seconds (3.7273e-05 STA, 1.8272e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
 VPR succeeded
-The entire flow of VPR took 7.35 seconds (max_rss 3298.9 MiB)
+The entire flow of VPR took 7.26 seconds (max_rss 3299.3 MiB)

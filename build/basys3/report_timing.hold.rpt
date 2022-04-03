@@ -3,35 +3,35 @@
 # Output precision: 3
 
 #Path 1
-Startpoint: input_1.inpad[0] (.input clocked by virtual_io_clock)
-Endpoint  : out:and_result.outpad[0] (.output clocked by virtual_io_clock)
+Startpoint: in_a.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:out.outpad[0] (.output clocked by virtual_io_clock)
 Path Type : hold
 
-Point                                                                        Incr      Path
--------------------------------------------------------------------------------------------
-clock virtual_io_clock (rise edge)                                          0.000     0.000
-clock source latency                                                        0.000     0.000
-input external delay                                                        0.000     0.000
-input_1.inpad[0] (.input)                                                   0.000     0.000
-$iopadmap$nand_gate.input_1.I[0] (IBUF_VPR)                                 0.000     0.000
-$iopadmap$nand_gate.input_1.O[0] (IBUF_VPR)                                 0.010     0.010
-and_temp.in[1] (.names)                                                     1.116     1.126
-and_temp.out[0] (.names)                                                    0.042     1.168
-$iopadmap$nand_gate.and_result.obuft.I[0] (OBUFT_VPR)                       0.562     1.730
-$iopadmap$nand_gate.and_result.obuft.O[0] (OBUFT_VPR)                       0.010     1.740
-out:and_result.outpad[0] (.output)                                          0.000     1.740
-data arrival time                                                                     1.740
+Point                                                                 Incr      Path
+------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                   0.000     0.000
+clock source latency                                                 0.000     0.000
+input external delay                                                 0.000     0.000
+in_a.inpad[0] (.input)                                               0.000     0.000
+$iopadmap$nand_gate.in_a.I[0] (IBUF_VPR)                             0.000     0.000
+$iopadmap$nand_gate.in_a.O[0] (IBUF_VPR)                             0.010     0.010
+$abc$1572$iopadmap$out.in[1] (.names)                                1.116     1.126
+$abc$1572$iopadmap$out.out[0] (.names)                               0.042     1.168
+$iopadmap$nand_gate.out.obuft.I[0] (OBUFT_VPR)                       0.562     1.730
+$iopadmap$nand_gate.out.obuft.O[0] (OBUFT_VPR)                       0.010     1.740
+out:out.outpad[0] (.output)                                          0.000     1.740
+data arrival time                                                              1.740
 
-clock virtual_io_clock (rise edge)                                          0.000     0.000
-clock source latency                                                        0.000     0.000
-clock uncertainty                                                           0.000     0.000
-output external delay                                                       0.000     0.000
-data required time                                                                    0.000
--------------------------------------------------------------------------------------------
-data required time                                                                   -0.000
-data arrival time                                                                     1.740
--------------------------------------------------------------------------------------------
-slack (MET)                                                                           1.740
+clock virtual_io_clock (rise edge)                                   0.000     0.000
+clock source latency                                                 0.000     0.000
+clock uncertainty                                                    0.000     0.000
+output external delay                                                0.000     0.000
+data required time                                                             0.000
+------------------------------------------------------------------------------------
+data required time                                                            -0.000
+data arrival time                                                              1.740
+------------------------------------------------------------------------------------
+slack (MET)                                                                    1.740
 
 
 #End of timing report

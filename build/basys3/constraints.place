@@ -1,5 +1,4 @@
 #Block Name x   y   z    pcf_line
 #------- --  --  -    ----
-in_a      2  146  0  # set_property LOC V16 [get_ports {in_a}]
-$iopadmap$nand_gate.out.genblk1.t_inv   2  155  0  # set_property LOC U16 [get_ports {out}]
-in_b      2  147  0  # set_property LOC V17 [get_ports {in_b}]
+$iopadmap$not_gate.out.genblk1.t_inv   2  155  0  # set_property LOC U16 [get_ports {out}]
+in        2  147  0  # set_property LOC V17 [get_ports {in}]

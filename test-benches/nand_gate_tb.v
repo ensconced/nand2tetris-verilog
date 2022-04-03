@@ -12,7 +12,7 @@ module nand_gate_tb;
         #period;
 
         assert(out == 1) else begin
-            $display("output should be 1 when both inputs are off");
+            $display("output should be on when both inputs are off");
             $fatal(1);
         end;
 
@@ -21,7 +21,7 @@ module nand_gate_tb;
         #period;
         
         assert(out == 1) else begin
-            $display("output should be 1 when in_a is off and in_b is on");
+            $display("output should be on when in_a is off and in_b is on");
             $fatal(1);
         end;
 
@@ -30,7 +30,7 @@ module nand_gate_tb;
         #period;
         
         assert(out == 1) else begin
-            $display("output should be 1 when in_a is on and in_b is off");
+            $display("output should be on when in_a is on and in_b is off");
             $fatal(1);
         end;
 

@@ -11,12 +11,12 @@ vtr-users@googlegroups.com
 This is free open source code under MIT license.
 
 VPR was run with the following command-line:
-genfasm /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml nand_gate.eblif --device xc7a50t-test --max_router_iterations 500 --routing_failure_predictor off --router_high_fanout_threshold -1 --constant_net_method route --route_chan_width 500 --router_heap bucket --clock_modeling route --place_delta_delay_matrix_calculation_method dijkstra --place_delay_model delta --router_lookahead extended_map --check_route quick --strict_checks off --allow_dangling_combinational_nodes on --disable_errors check_unbuffered_edges:check_route --congested_routing_iteration_threshold 0.8 --incremental_reroute_delay_ripup off --base_cost_type delay_normalized_length_bounded --bb_factor 10 --acc_fac 0.7 --astar_fac 1.8 --initial_pres_fac 2.828 --pres_fac_mult 1.2 --check_rr_graph off --suppress_warnings ,sum_pin_class:check_unbuffered_edges:load_rr_indexed_data_T_values:check_rr_node:trans_per_R:check_route:set_rr_graph_tool_comment:calculate_average_switch --read_rr_graph /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/rr_graph_xc7a50t_test.rr_graph.real.bin
+genfasm /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml not_gate.eblif --device xc7a50t-test --max_router_iterations 500 --routing_failure_predictor off --router_high_fanout_threshold -1 --constant_net_method route --route_chan_width 500 --router_heap bucket --clock_modeling route --place_delta_delay_matrix_calculation_method dijkstra --place_delay_model delta --router_lookahead extended_map --check_route quick --strict_checks off --allow_dangling_combinational_nodes on --disable_errors check_unbuffered_edges:check_route --congested_routing_iteration_threshold 0.8 --incremental_reroute_delay_ripup off --base_cost_type delay_normalized_length_bounded --bb_factor 10 --acc_fac 0.7 --astar_fac 1.8 --initial_pres_fac 2.828 --pres_fac_mult 1.2 --check_rr_graph off --suppress_warnings ,sum_pin_class:check_unbuffered_edges:load_rr_indexed_data_T_values:check_rr_node:trans_per_R:check_route:set_rr_graph_tool_comment:calculate_average_switch --read_rr_graph /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/rr_graph_xc7a50t_test.rr_graph.real.bin
 
 Using up to 1 parallel worker(s)
 
 Architecture file: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml
-Circuit name: nand_gate
+Circuit name: not_gate
 
 Loading Architecture Description
 Warning 1: Model 'CE_VCC' output port 'VCC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
@@ -839,14 +839,14 @@ Warning 817: Model 'VCC' output port 'VCC' has no timing specification (no clock
 Warning 818: Model 'GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
 Warning 819: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'D' of model '.latch', port is a sequential input but has neither T_setup nor T_hold specified
 Warning 820: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'Q' of model '.latch', port is a sequential output but has neither min nor max T_clock_to_Q specified
-Loading Architecture Description took 1.28 seconds (max_rss 59.7 MiB, delta_rss +54.0 MiB)
+Loading Architecture Description took 1.31 seconds (max_rss 59.3 MiB, delta_rss +53.5 MiB)
 
 Warning 821: Non-zero switch output capacitance (4e-15) has no effect when switch 'buffer' is used for connection block inputs
 Timing analysis: ON
-Circuit netlist file: nand_gate.net
-Circuit placement file: nand_gate.place
-Circuit routing file: nand_gate.route
-Circuit SDC file: nand_gate.sdc
+Circuit netlist file: not_gate.net
+Circuit placement file: not_gate.place
+Circuit routing file: not_gate.route
+Circuit SDC file: not_gate.sdc
 Vpr floorplanning constraints file: not specified
 
 Packer: ENABLED
@@ -952,12 +952,12 @@ AnalysisOpts.echo_dot_timing_graph_node: -1
 AnalysisOpts.timing_report_detail: NETLIST
 
 Building complex block graph
-Building complex block graph took 0.05 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
-Circuit file: nand_gate.eblif
+Building complex block graph took 0.05 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
+Circuit file: not_gate.eblif
 Load circuit
-Load circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Load circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Clean circuit
-Absorbed 0 LUT buffers
+Absorbed 1 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    1 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -969,57 +969,57 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 2
 Swept block(s)      : 2
 Constant Pins Marked: 4
-Clean circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Clean circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Compress circuit
-Compress circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Compress circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Verify circuit
-Verify circuit took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Verify circuit took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
-  Blocks: 9
-    .input   :       2
+  Blocks: 7
+    .input   :       1
     .output  :       1
     5-LUT    :       1
-    IBUF_VPR :       2
+    IBUF_VPR :       1
     OBUFT_VPR:       1
     T_INV    :       1
     VCC      :       1
-  Nets  : 8
+  Nets  : 6
     Avg Fanout:     1.0
     Max Fanout:     1.0
     Min Fanout:     1.0
   Netlist Clocks: 0
 Build Timing Graph
-  Timing Graph Nodes: 16
-  Timing Graph Edges: 15
+  Timing Graph Nodes: 12
+  Timing Graph Edges: 11
   Timing Graph Levels: 8
-Build Timing Graph took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Build Timing Graph took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 Load Timing Constraints
 
-SDC file 'nand_gate.sdc' contained no SDC commands
+SDC file 'not_gate.sdc' contained no SDC commands
 Setting default timing constraints:
    * constrain all primay inputs and primary outputs on a virtual external clock 'virtual_io_clock'
    * optimize virtual clock to run as fast as possible
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-Load Timing Constraints took 0.00 seconds (max_rss 59.7 MiB, delta_rss +0.0 MiB)
+Load Timing Constraints took 0.00 seconds (max_rss 59.3 MiB, delta_rss +0.0 MiB)
 Load packing
 Begin loading packed FPGA netlist file.
-Netlist generated from file 'nand_gate.net'.
+Netlist generated from file 'not_gate.net'.
 Detected 1 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.01091 seconds).
-Load packing took 0.01 seconds (max_rss 91.5 MiB, delta_rss +31.8 MiB)
+Finished loading packed FPGA netlist file (took 0.009698 seconds).
+Load packing took 0.01 seconds (max_rss 90.8 MiB, delta_rss +31.6 MiB)
 Warning 822: Netlist contains 0 global net to non-global architecture pin connections
-Warning 823: Logic block #4 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
+Warning 823: Logic block #3 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
 
-Netlist num_nets: 4
-Netlist num_blocks: 5
+Netlist num_nets: 3
+Netlist num_blocks: 4
 Netlist EMPTY blocks: 0.
 Netlist BLK-TL-SLICEL blocks: 1.
 Netlist BLK-TL-SLICEM blocks: 0.
 Netlist BLK-TL-BRAM_L blocks: 0.
-Netlist BLK-TL-IOPAD blocks: 3.
+Netlist BLK-TL-IOPAD blocks: 2.
 Netlist BLK-TL-IOPAD_M blocks: 0.
 Netlist BLK-TL-IOPAD_S blocks: 0.
 Netlist BLK-TL-BUFGCTRL blocks: 0.
@@ -1034,7 +1034,7 @@ Netlist BLK-TL-OPAD blocks: 0.
 Netlist BLK-TL-PCIE_2_1 blocks: 0.
 Netlist SYN-VCC blocks: 1.
 Netlist SYN-GND blocks: 0.
-Netlist inputs pins: 2
+Netlist inputs pins: 1
 Netlist output pins: 2
 
 
@@ -1045,11 +1045,11 @@ Pb types usage...
      ALUT                    : 1
       A5LUT                  : 1
        lut                   : 1
-  BLK-TL-IOPAD               : 3
-   IOB33                     : 3
-    IOB33_MODES              : 3
-     IBUF_VPR                : 2
-     inpad                   : 2
+  BLK-TL-IOPAD               : 2
+   IOB33                     : 2
+    IOB33_MODES              : 2
+     IBUF_VPR                : 1
+     inpad                   : 1
      OBUFT_VPR               : 1
      outpad                  : 1
    OLOGICE3                  : 1
@@ -1080,7 +1080,7 @@ Resource usage...
 	Architecture
 		55	blocks of type: BLK-TL-BRAM_L
 	Netlist
-		3	blocks of type: BLK-TL-IOPAD
+		2	blocks of type: BLK-TL-IOPAD
 	Architecture
 		6	blocks of type: BLK-TL-LIOPAD_SING
 		4	blocks of type: BLK-TL-RIOPAD_SING
@@ -1174,21 +1174,21 @@ Device Utilization: 0.00 (target 1.00)
 	Physical Tile BLK-TL-BRAM_L:
 	Block Utilization: 0.00 Logical Block: BLK-TL-BRAM_L
 	Physical Tile BLK-TL-LIOPAD_M:
-	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.03 Logical Block: BLK-TL-IOPAD
 	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_M
 	Physical Tile BLK-TL-LIOPAD_S:
-	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.03 Logical Block: BLK-TL-IOPAD
 	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_S
 	Physical Tile BLK-TL-LIOPAD_SING:
-	Block Utilization: 0.50 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.33 Logical Block: BLK-TL-IOPAD
 	Physical Tile BLK-TL-RIOPAD_M:
-	Block Utilization: 0.06 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
 	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_M
 	Physical Tile BLK-TL-RIOPAD_S:
-	Block Utilization: 0.06 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
 	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_S
 	Physical Tile BLK-TL-RIOPAD_SING:
-	Block Utilization: 0.75 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.50 Logical Block: BLK-TL-IOPAD
 	Physical Tile BLK-TL-CLK_BUFG_BOT_R:
 	Block Utilization: 0.00 Logical Block: BLK-TL-BUFGCTRL
 	Physical Tile BLK-TL-CLK_BUFG_TOP_R:
@@ -1230,42 +1230,42 @@ Device Utilization: 0.00 (target 1.00)
 	Physical Tile SYN-GND:
 	Block Utilization: 0.00 Logical Block: SYN-GND
 
-# Build Device Grid took 0.04 seconds (max_rss 91.7 MiB, delta_rss +0.0 MiB)
+# Build Device Grid took 0.04 seconds (max_rss 91.1 MiB, delta_rss +0.0 MiB)
 # Loading routing resource graph
 
 
-# Loading routing resource graph took 12.67 seconds (max_rss 3952.5 MiB, delta_rss +3860.8 MiB)
+# Loading routing resource graph took 12.77 seconds (max_rss 3950.6 MiB, delta_rss +3859.5 MiB)
   RR Graph Nodes: 2934684
   RR Graph Edges: 22357697
-Create Device took 13.36 seconds (max_rss 3952.5 MiB, delta_rss +3860.8 MiB)
+Create Device took 13.46 seconds (max_rss 3950.6 MiB, delta_rss +3859.5 MiB)
 
 Load Placement
-Reading nand_gate.place.
+Reading not_gate.place.
 
-Successfully read nand_gate.place.
+Successfully read not_gate.place.
 
-Load Placement took 0.00 seconds (max_rss 3952.5 MiB, delta_rss +0.0 MiB)
+Load Placement took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
 
 Load Routing
 Begin loading FPGA routing file.
 Finished loading route file
-Load Routing took 0.08 seconds (max_rss 3952.5 MiB, delta_rss +0.0 MiB)
+Load Routing took 0.08 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
 
-Serial number (magic cookie) for the routing is: 546072
+Serial number (magic cookie) for the routing is: 541298
 Circuit successfully routed with a channel width factor of 500.
-Incr Slack updates 1 in 3.741e-06 sec
-Full Max Req/Worst Slack updates 1 in 1.447e-06 sec
+Incr Slack updates 1 in 3.127e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.557e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 6.514e-06 sec
+Full Criticality updates 1 in 6.086e-06 sec
 Synchronize the packed netlist to routing optimization
 # Annotating rr_node with routed nets
-# Annotating rr_node with routed nets took 0.00 seconds (max_rss 3952.5 MiB, delta_rss +0.0 MiB)
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
 Found 0 mismatches between routing and packing results.
 Fixed 0 routing traces due to mismatch between routing and packing results.
-Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 3952.5 MiB, delta_rss +0.0 MiB)
-Writing Implementation FASM: nand_gate.fasm
-The entire flow of VPR took 17.546 seconds.
+Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 3950.6 MiB, delta_rss +0.0 MiB)
+Writing Implementation FASM: not_gate.fasm
+The entire flow of VPR took 17.6671 seconds.

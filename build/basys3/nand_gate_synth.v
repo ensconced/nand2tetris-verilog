@@ -2,20 +2,20 @@
 
 (* hdlname = "\\nand_gate" *)
 (* top =  1  *)
-(* src = "/home/joe/dev/n2t-verilog/nand_gate.v:1.1-7.10" *)
+(* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.1-7.10" *)
 module nand_gate(input_1, input_2, and_result);
   (* src = "/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1940.5-1944.4|/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:1963.8-1963.9" *)
   wire _0_;
   (* force_downto = 32'd1 *)
   (* src = "/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v:30.21-30.22" *)
   wire [1:0] _1_;
-  (* src = "/home/joe/dev/n2t-verilog/nand_gate.v:3.26-3.36" *)
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:3.26-3.36" *)
   output and_result;
-  (* src = "/home/joe/dev/n2t-verilog/nand_gate.v:4.10-4.18" *)
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:4.10-4.18" *)
   wire and_temp;
-  (* src = "/home/joe/dev/n2t-verilog/nand_gate.v:1.25-1.32" *)
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:1.25-1.32" *)
   input input_1;
-  (* src = "/home/joe/dev/n2t-verilog/nand_gate.v:2.25-2.32" *)
+  (* src = "/home/joe/dev/nand2tetris-verilog/components/nand_gate.v:2.25-2.32" *)
   input input_2;
   assign and_temp = 4'h7 >> (* module_not_derived = 32'd1 *) (* src = "/home/joe/opt/symbiflow/xc7/conda/envs/xc7/bin/../share/yosys/xilinx/lut_map.v:43.26-44.30|/home/joe/opt/symbiflow/xc7/install/share/symbiflow/techmaps/xc7_vpr/techmap/cells_map.v:220.5-223.4" *) _1_;
   (* module_not_derived = 32'd1 *)

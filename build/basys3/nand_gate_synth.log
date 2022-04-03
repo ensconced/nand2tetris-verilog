@@ -22,10 +22,10 @@
  Yosys 0.13+3 (git sha1 61324cf55, x86_64-conda_cos6-linux-gnu-gcc 1.24.0.133_b0863d8_dirty -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/home/runner/work/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1642201854658/work=/usr/local/src/conda/yosys-0.13_4_g61324cf55 -fdebug-prefix-map=/home/joe/opt/symbiflow/xc7/conda/envs/xc7=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
 
 
--- Parsing `/home/joe/dev/n2t-verilog/nand_gate.v' using frontend ` -vlog2k' --
+-- Parsing `/home/joe/dev/nand2tetris-verilog/components/nand_gate.v' using frontend ` -vlog2k' --
 
-1. Executing Verilog-2005 frontend: /home/joe/dev/n2t-verilog/nand_gate.v
-Parsing Verilog input from `/home/joe/dev/n2t-verilog/nand_gate.v' to AST representation.
+1. Executing Verilog-2005 frontend: /home/joe/dev/nand2tetris-verilog/components/nand_gate.v
+Parsing Verilog input from `/home/joe/dev/nand2tetris-verilog/components/nand_gate.v' to AST representation.
 Storing AST representation for module `$abstract\nand_gate'.
 Successfully finished Verilog frontend.
 
@@ -3913,6 +3913,6 @@ Cleaned up 21 empty switches.
 Dumping module `\nand_gate'.
 
 Warnings: 3 unique messages, 4 total
-End of script. Logfile hash: fbaa1b463d, CPU: user 8.53s system 0.13s, MEM: 357.01 MB peak
+End of script. Logfile hash: 004b5c5584, CPU: user 8.40s system 0.18s, MEM: 356.86 MB peak
 Yosys 0.13+3 (git sha1 61324cf55, x86_64-conda_cos6-linux-gnu-gcc 1.24.0.133_b0863d8_dirty -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -fdebug-prefix-map=/home/runner/work/conda-eda/conda-eda/workdir/conda-env/conda-bld/yosys_1642201854658/work=/usr/local/src/conda/yosys-0.13_4_g61324cf55 -fdebug-prefix-map=/home/joe/opt/symbiflow/xc7/conda/envs/xc7=/usr/local/src/conda-prefix -fPIC -Os -fno-merge-constants)
 Time spent: 53% 44x read_verilog (5 sec), 8% 1x tcl (0 sec), ...

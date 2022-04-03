@@ -1,0 +1,5 @@
+#Block Name     x   y   z    pcf_line
+#-------------- --  --  -    ----
+$iopadmap$nand_gate.and_result.genblk1.t_inv   2  155  0  # set_property LOC U16 [get_ports {and_result}]
+input_2          2  147  0  # set_property LOC V17 [get_ports {input_2}]
+input_1          2  146  0  # set_property LOC V16 [get_ports {input_1}]

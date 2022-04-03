@@ -1,0 +1,1271 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+116f30cb8
+Revision: 8.0.0-5105-g116f30cb8
+Compiled: 2022-01-14T23:42:34
+Compiler: GNU 9.3.0 on Linux-5.11.0-1025-azure x86_64
+Build Info: Release IPO PGO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+genfasm /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml nand_gate.eblif --device xc7a50t-test --max_router_iterations 500 --routing_failure_predictor off --router_high_fanout_threshold -1 --constant_net_method route --route_chan_width 500 --router_heap bucket --clock_modeling route --place_delta_delay_matrix_calculation_method dijkstra --place_delay_model delta --router_lookahead extended_map --check_route quick --strict_checks off --allow_dangling_combinational_nodes on --disable_errors check_unbuffered_edges:check_route --congested_routing_iteration_threshold 0.8 --incremental_reroute_delay_ripup off --base_cost_type delay_normalized_length_bounded --bb_factor 10 --acc_fac 0.7 --astar_fac 1.8 --initial_pres_fac 2.828 --pres_fac_mult 1.2 --check_rr_graph off --suppress_warnings ,sum_pin_class:check_unbuffered_edges:load_rr_indexed_data_T_values:check_rr_node:trans_per_R:check_route:set_rr_graph_tool_comment:calculate_average_switch --read_rr_graph /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/rr_graph_xc7a50t_test.rr_graph.real.bin
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /home/joe/opt/symbiflow/xc7/install/share/symbiflow/arch/xc7a50t_test/arch.timing.xml
+Circuit name: nand_gate
+
+Loading Architecture Description
+Warning 1: Model 'CE_VCC' output port 'VCC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 2: Model 'SR_GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'NO_FF' input port 'D' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'NO_DRAM' input port 'A' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'RAMB18E1_VPR' input port 'ADDRBTIEHIGH' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 6: Model 'RAMB18E1_VPR' input port 'ADDRATIEHIGH' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RAMB36E1_PRIM' input port 'CASCADEINB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RAMB36E1_PRIM' input port 'CASCADEINA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RAMB36E1_PRIM' output port 'CASCADEOUTB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 10: Model 'RAMB36E1_PRIM' output port 'CASCADEOUTA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 11: Model 'IDELAYE2_VPR' input port 'LDPIPEEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'IDELAYE2_VPR' input port 'IDATAIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'IDELAYE2_VPR' input port 'DATAIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'IDELAYE2_VPR' input port 'CNTVALUEIN4' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'IDELAYE2_VPR' input port 'CNTVALUEIN3' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'IDELAYE2_VPR' input port 'CNTVALUEIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'IDELAYE2_VPR' input port 'CNTVALUEIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'IDELAYE2_VPR' input port 'CNTVALUEIN0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'IDELAYE2_VPR' input port 'CINVCTRL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'IDELAYE2_VPR' output port 'DATAOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 21: Model 'IDELAYE2_VPR' output port 'CNTVALUEOUT4' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 22: Model 'IDELAYE2_VPR' output port 'CNTVALUEOUT3' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 23: Model 'IDELAYE2_VPR' output port 'CNTVALUEOUT2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 24: Model 'IDELAYE2_VPR' output port 'CNTVALUEOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 25: Model 'IDELAYE2_VPR' output port 'CNTVALUEOUT0' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 26: Model 'ISERDESE2_NO_IDELAY_VPR' input port 'SHIFTIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'ISERDESE2_NO_IDELAY_VPR' input port 'SHIFTIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'ISERDESE2_NO_IDELAY_VPR' input port 'DYNCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'ISERDESE2_NO_IDELAY_VPR' input port 'DYNCLKDIVSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'ISERDESE2_NO_IDELAY_VPR' input port 'DYNCLKDIVPSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'ISERDESE2_NO_IDELAY_VPR' output port 'SHIFTOUT2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 32: Model 'ISERDESE2_NO_IDELAY_VPR' output port 'SHIFTOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 33: Model 'ISERDESE2_IDELAY_VPR' input port 'SHIFTIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'ISERDESE2_IDELAY_VPR' input port 'SHIFTIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'ISERDESE2_IDELAY_VPR' input port 'DYNCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'ISERDESE2_IDELAY_VPR' input port 'DYNCLKDIVSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'ISERDESE2_IDELAY_VPR' input port 'DYNCLKDIVPSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'ISERDESE2_IDELAY_VPR' output port 'SHIFTOUT2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 39: Model 'ISERDESE2_IDELAY_VPR' output port 'SHIFTOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 40: Model 'IDDR_VPR' input port 'SR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'OSERDESE2_VPR' input port 'SHIFTIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'OSERDESE2_VPR' input port 'SHIFTIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'OSERDESE2_VPR' input port 'TBYTEIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'OSERDESE2_VPR' output port 'SHIFTOUT2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 45: Model 'OSERDESE2_VPR' output port 'SHIFTOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 46: Model 'ODDR_VPR' input port 'SR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'BUFGCTRL_VPR' input port 'S1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'BUFGCTRL_VPR' input port 'S0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'BUFGCTRL_VPR' input port 'IGNORE1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'BUFGCTRL_VPR' input port 'IGNORE0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'BUFGCTRL_VPR' input port 'CE1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'BUFGCTRL_VPR' input port 'CE0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'PLLE2_ADV_VPR' input port 'PWRDWN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'PLLE2_ADV_VPR' input port 'CLKINSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'MMCME2_ADV_VPR' input port 'TESTIN31' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'MMCME2_ADV_VPR' input port 'TESTIN30' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'MMCME2_ADV_VPR' input port 'TESTIN29' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'MMCME2_ADV_VPR' input port 'TESTIN28' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'MMCME2_ADV_VPR' input port 'TESTIN27' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'MMCME2_ADV_VPR' input port 'TESTIN26' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'MMCME2_ADV_VPR' input port 'TESTIN25' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'MMCME2_ADV_VPR' input port 'TESTIN24' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'MMCME2_ADV_VPR' input port 'TESTIN23' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'MMCME2_ADV_VPR' input port 'TESTIN22' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'MMCME2_ADV_VPR' input port 'TESTIN21' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'MMCME2_ADV_VPR' input port 'TESTIN20' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'MMCME2_ADV_VPR' input port 'TESTIN19' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 68: Model 'MMCME2_ADV_VPR' input port 'TESTIN18' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 69: Model 'MMCME2_ADV_VPR' input port 'TESTIN17' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 70: Model 'MMCME2_ADV_VPR' input port 'TESTIN16' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 71: Model 'MMCME2_ADV_VPR' input port 'TESTIN15' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 72: Model 'MMCME2_ADV_VPR' input port 'TESTIN14' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 73: Model 'MMCME2_ADV_VPR' input port 'TESTIN13' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 74: Model 'MMCME2_ADV_VPR' input port 'TESTIN12' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 75: Model 'MMCME2_ADV_VPR' input port 'TESTIN11' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 76: Model 'MMCME2_ADV_VPR' input port 'TESTIN10' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 77: Model 'MMCME2_ADV_VPR' input port 'TESTIN9' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 78: Model 'MMCME2_ADV_VPR' input port 'TESTIN8' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 79: Model 'MMCME2_ADV_VPR' input port 'TESTIN7' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 80: Model 'MMCME2_ADV_VPR' input port 'TESTIN6' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 81: Model 'MMCME2_ADV_VPR' input port 'TESTIN5' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 82: Model 'MMCME2_ADV_VPR' input port 'TESTIN4' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 83: Model 'MMCME2_ADV_VPR' input port 'TESTIN3' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 84: Model 'MMCME2_ADV_VPR' input port 'TESTIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 85: Model 'MMCME2_ADV_VPR' input port 'TESTIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 86: Model 'MMCME2_ADV_VPR' input port 'TESTIN0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 87: Model 'MMCME2_ADV_VPR' input port 'PWRDWN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 88: Model 'MMCME2_ADV_VPR' input port 'CLKINSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 89: Model 'MMCME2_ADV_VPR' output port 'TMUXOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 90: Model 'MMCME2_ADV_VPR' output port 'TESTOUT63' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 91: Model 'MMCME2_ADV_VPR' output port 'TESTOUT62' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 92: Model 'MMCME2_ADV_VPR' output port 'TESTOUT61' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 93: Model 'MMCME2_ADV_VPR' output port 'TESTOUT60' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 94: Model 'MMCME2_ADV_VPR' output port 'TESTOUT59' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 95: Model 'MMCME2_ADV_VPR' output port 'TESTOUT58' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 96: Model 'MMCME2_ADV_VPR' output port 'TESTOUT57' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 97: Model 'MMCME2_ADV_VPR' output port 'TESTOUT56' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 98: Model 'MMCME2_ADV_VPR' output port 'TESTOUT55' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 99: Model 'MMCME2_ADV_VPR' output port 'TESTOUT54' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 100: Model 'MMCME2_ADV_VPR' output port 'TESTOUT53' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 101: Model 'MMCME2_ADV_VPR' output port 'TESTOUT52' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 102: Model 'MMCME2_ADV_VPR' output port 'TESTOUT51' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 103: Model 'MMCME2_ADV_VPR' output port 'TESTOUT50' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 104: Model 'MMCME2_ADV_VPR' output port 'TESTOUT49' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 105: Model 'MMCME2_ADV_VPR' output port 'TESTOUT48' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 106: Model 'MMCME2_ADV_VPR' output port 'TESTOUT47' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 107: Model 'MMCME2_ADV_VPR' output port 'TESTOUT46' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 108: Model 'MMCME2_ADV_VPR' output port 'TESTOUT45' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 109: Model 'MMCME2_ADV_VPR' output port 'TESTOUT44' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 110: Model 'MMCME2_ADV_VPR' output port 'TESTOUT43' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 111: Model 'MMCME2_ADV_VPR' output port 'TESTOUT42' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 112: Model 'MMCME2_ADV_VPR' output port 'TESTOUT41' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 113: Model 'MMCME2_ADV_VPR' output port 'TESTOUT40' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 114: Model 'MMCME2_ADV_VPR' output port 'TESTOUT39' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 115: Model 'MMCME2_ADV_VPR' output port 'TESTOUT38' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 116: Model 'MMCME2_ADV_VPR' output port 'TESTOUT37' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 117: Model 'MMCME2_ADV_VPR' output port 'TESTOUT36' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 118: Model 'MMCME2_ADV_VPR' output port 'TESTOUT35' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 119: Model 'MMCME2_ADV_VPR' output port 'TESTOUT34' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 120: Model 'MMCME2_ADV_VPR' output port 'TESTOUT33' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 121: Model 'MMCME2_ADV_VPR' output port 'TESTOUT32' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 122: Model 'MMCME2_ADV_VPR' output port 'TESTOUT31' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 123: Model 'MMCME2_ADV_VPR' output port 'TESTOUT30' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 124: Model 'MMCME2_ADV_VPR' output port 'TESTOUT29' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 125: Model 'MMCME2_ADV_VPR' output port 'TESTOUT28' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 126: Model 'MMCME2_ADV_VPR' output port 'TESTOUT27' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 127: Model 'MMCME2_ADV_VPR' output port 'TESTOUT26' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 128: Model 'MMCME2_ADV_VPR' output port 'TESTOUT25' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 129: Model 'MMCME2_ADV_VPR' output port 'TESTOUT24' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 130: Model 'MMCME2_ADV_VPR' output port 'TESTOUT23' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 131: Model 'MMCME2_ADV_VPR' output port 'TESTOUT22' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 132: Model 'MMCME2_ADV_VPR' output port 'TESTOUT21' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 133: Model 'MMCME2_ADV_VPR' output port 'TESTOUT20' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 134: Model 'MMCME2_ADV_VPR' output port 'TESTOUT19' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 135: Model 'MMCME2_ADV_VPR' output port 'TESTOUT18' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 136: Model 'MMCME2_ADV_VPR' output port 'TESTOUT17' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 137: Model 'MMCME2_ADV_VPR' output port 'TESTOUT16' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 138: Model 'MMCME2_ADV_VPR' output port 'TESTOUT15' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 139: Model 'MMCME2_ADV_VPR' output port 'TESTOUT14' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 140: Model 'MMCME2_ADV_VPR' output port 'TESTOUT13' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 141: Model 'MMCME2_ADV_VPR' output port 'TESTOUT12' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 142: Model 'MMCME2_ADV_VPR' output port 'TESTOUT11' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 143: Model 'MMCME2_ADV_VPR' output port 'TESTOUT10' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 144: Model 'MMCME2_ADV_VPR' output port 'TESTOUT9' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 145: Model 'MMCME2_ADV_VPR' output port 'TESTOUT8' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 146: Model 'MMCME2_ADV_VPR' output port 'TESTOUT7' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 147: Model 'MMCME2_ADV_VPR' output port 'TESTOUT6' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 148: Model 'MMCME2_ADV_VPR' output port 'TESTOUT5' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 149: Model 'MMCME2_ADV_VPR' output port 'TESTOUT4' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 150: Model 'MMCME2_ADV_VPR' output port 'TESTOUT3' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 151: Model 'MMCME2_ADV_VPR' output port 'TESTOUT2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 152: Model 'MMCME2_ADV_VPR' output port 'TESTOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 153: Model 'MMCME2_ADV_VPR' output port 'TESTOUT0' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 154: Model 'MMCME2_ADV_VPR' output port 'CLKFBSTOPPED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 155: Model 'MMCME2_ADV_VPR' output port 'CLKINSTOPPED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 156: Model 'IDELAYCTRL' input port 'RST' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 157: Model 'IDELAYCTRL' output port 'RDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 158: Model 'GTPE2_COMMON_VPR' input port 'PMARSVD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 159: Model 'GTPE2_COMMON_VPR' input port 'DRPADDR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 160: Model 'GTPE2_COMMON_VPR' input port 'BGRCALOVRD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 161: Model 'GTPE2_COMMON_VPR' input port 'PLL1REFCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 162: Model 'GTPE2_COMMON_VPR' input port 'PLL0REFCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 163: Model 'GTPE2_COMMON_VPR' input port 'DRPDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 164: Model 'GTPE2_COMMON_VPR' input port 'RCALENB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 165: Model 'GTPE2_COMMON_VPR' input port 'PLL1RESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 166: Model 'GTPE2_COMMON_VPR' input port 'PLL1PD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 167: Model 'GTPE2_COMMON_VPR' input port 'PLL1LOCKEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 168: Model 'GTPE2_COMMON_VPR' input port 'PLL0RESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 169: Model 'GTPE2_COMMON_VPR' input port 'PLL0PD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 170: Model 'GTPE2_COMMON_VPR' input port 'PLL0LOCKEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 171: Model 'GTPE2_COMMON_VPR' input port 'DRPWE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 172: Model 'GTPE2_COMMON_VPR' input port 'DRPEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 173: Model 'GTPE2_COMMON_VPR' input port 'BGRCALOVRDENB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 174: Model 'GTPE2_COMMON_VPR' input port 'BGPDB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 175: Model 'GTPE2_COMMON_VPR' input port 'BGMONITORENB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 176: Model 'GTPE2_COMMON_VPR' input port 'BGBYPASSB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 177: Model 'GTPE2_COMMON_VPR' output port 'DMONITOROUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 178: Model 'GTPE2_COMMON_VPR' output port 'PMARSVDOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 179: Model 'GTPE2_COMMON_VPR' output port 'DRPDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 180: Model 'GTPE2_COMMON_VPR' output port 'REFCLKOUTMONITOR1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 181: Model 'GTPE2_COMMON_VPR' output port 'REFCLKOUTMONITOR0' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 182: Model 'GTPE2_COMMON_VPR' output port 'PLL1REFCLKLOST' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 183: Model 'GTPE2_COMMON_VPR' output port 'PLL1OUTREFCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 184: Model 'GTPE2_COMMON_VPR' output port 'PLL1OUTCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 185: Model 'GTPE2_COMMON_VPR' output port 'PLL1LOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 186: Model 'GTPE2_COMMON_VPR' output port 'PLL1FBCLKLOST' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 187: Model 'GTPE2_COMMON_VPR' output port 'PLL0REFCLKLOST' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 188: Model 'GTPE2_COMMON_VPR' output port 'PLL0OUTREFCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 189: Model 'GTPE2_COMMON_VPR' output port 'PLL0OUTCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 190: Model 'GTPE2_COMMON_VPR' output port 'PLL0LOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 191: Model 'GTPE2_COMMON_VPR' output port 'PLL0FBCLKLOST' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 192: Model 'GTPE2_COMMON_VPR' output port 'DRPRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 193: Model 'GTPE2_CHANNEL_VPR' input port 'DRPADDR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 194: Model 'GTPE2_CHANNEL_VPR' input port 'TXSEQUENCE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 195: Model 'GTPE2_CHANNEL_VPR' input port 'TXMAINCURSOR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 196: Model 'GTPE2_CHANNEL_VPR' input port 'TXPRECURSOR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 197: Model 'GTPE2_CHANNEL_VPR' input port 'TXPOSTCURSOR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 198: Model 'GTPE2_CHANNEL_VPR' input port 'TXPIPPMSTEPSIZE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 199: Model 'GTPE2_CHANNEL_VPR' input port 'TXDIFFCTRL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 200: Model 'GTPE2_CHANNEL_VPR' input port 'TXCHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 201: Model 'GTPE2_CHANNEL_VPR' input port 'TXCHARDISPVAL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 202: Model 'GTPE2_CHANNEL_VPR' input port 'TXCHARDISPMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 203: Model 'GTPE2_CHANNEL_VPR' input port 'TX8B10BBYPASS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 204: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTID0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 205: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTCFG' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 206: Model 'GTPE2_CHANNEL_VPR' input port 'RXCHBONDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 207: Model 'GTPE2_CHANNEL_VPR' input port 'TXDATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 208: Model 'GTPE2_CHANNEL_VPR' input port 'TXRATE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 209: Model 'GTPE2_CHANNEL_VPR' input port 'TXPRBSSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 210: Model 'GTPE2_CHANNEL_VPR' input port 'TXOUTCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 211: Model 'GTPE2_CHANNEL_VPR' input port 'TXMARGIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 212: Model 'GTPE2_CHANNEL_VPR' input port 'TXHEADER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 213: Model 'GTPE2_CHANNEL_VPR' input port 'TXBUFDIFFCTRL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 214: Model 'GTPE2_CHANNEL_VPR' input port 'RXRATE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 215: Model 'GTPE2_CHANNEL_VPR' input port 'RXPRBSSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 216: Model 'GTPE2_CHANNEL_VPR' input port 'RXOUTCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 217: Model 'GTPE2_CHANNEL_VPR' input port 'RXCHBONDLEVEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 218: Model 'GTPE2_CHANNEL_VPR' input port 'LOOPBACK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 219: Model 'GTPE2_CHANNEL_VPR' input port 'TXSYSCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 220: Model 'GTPE2_CHANNEL_VPR' input port 'TXPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 221: Model 'GTPE2_CHANNEL_VPR' input port 'RXSYSCLKSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 222: Model 'GTPE2_CHANNEL_VPR' input port 'RXPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 223: Model 'GTPE2_CHANNEL_VPR' input port 'RXELECIDLEMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 224: Model 'GTPE2_CHANNEL_VPR' input port 'TSTIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 225: Model 'GTPE2_CHANNEL_VPR' input port 'PCSRSVDIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 226: Model 'GTPE2_CHANNEL_VPR' input port 'GTRSVD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 227: Model 'GTPE2_CHANNEL_VPR' input port 'DRPDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 228: Model 'GTPE2_CHANNEL_VPR' input port 'RXADAPTSELTEST' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 229: Model 'GTPE2_CHANNEL_VPR' input port 'TXUSERRDY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 230: Model 'GTPE2_CHANNEL_VPR' input port 'TXSYNCMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 231: Model 'GTPE2_CHANNEL_VPR' input port 'TXSYNCIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 232: Model 'GTPE2_CHANNEL_VPR' input port 'TXSYNCALLIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 233: Model 'GTPE2_CHANNEL_VPR' input port 'TXSWING' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 234: Model 'GTPE2_CHANNEL_VPR' input port 'TXSTARTSEQ' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 235: Model 'GTPE2_CHANNEL_VPR' input port 'TXRATEMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 236: Model 'GTPE2_CHANNEL_VPR' input port 'TXPRECURSORINV' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 237: Model 'GTPE2_CHANNEL_VPR' input port 'TXPRBSFORCEERR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 238: Model 'GTPE2_CHANNEL_VPR' input port 'TXPOSTCURSORINV' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 239: Model 'GTPE2_CHANNEL_VPR' input port 'TXPOLARITY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 240: Model 'GTPE2_CHANNEL_VPR' input port 'TXPMARESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 241: Model 'GTPE2_CHANNEL_VPR' input port 'TXPISOPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 242: Model 'GTPE2_CHANNEL_VPR' input port 'TXPIPPMSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 243: Model 'GTPE2_CHANNEL_VPR' input port 'TXPIPPMPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 244: Model 'GTPE2_CHANNEL_VPR' input port 'TXPIPPMOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 245: Model 'GTPE2_CHANNEL_VPR' input port 'TXPIPPMEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 246: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 247: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHINIT' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 248: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHDLYRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 249: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHDLYPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 250: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHALIGNEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 251: Model 'GTPE2_CHANNEL_VPR' input port 'TXPHALIGN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 252: Model 'GTPE2_CHANNEL_VPR' input port 'TXPDELECIDLEMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 253: Model 'GTPE2_CHANNEL_VPR' input port 'TXPCSRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 254: Model 'GTPE2_CHANNEL_VPR' input port 'TXINHIBIT' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 255: Model 'GTPE2_CHANNEL_VPR' input port 'TXELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 256: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYUPDOWN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 257: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYSRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 258: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 259: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 260: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 261: Model 'GTPE2_CHANNEL_VPR' input port 'TXDLYBYPASS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 262: Model 'GTPE2_CHANNEL_VPR' input port 'TXDIFFPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 263: Model 'GTPE2_CHANNEL_VPR' input port 'TXDETECTRX' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 264: Model 'GTPE2_CHANNEL_VPR' input port 'TXDEEMPH' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 265: Model 'GTPE2_CHANNEL_VPR' input port 'TXCOMWAKE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 266: Model 'GTPE2_CHANNEL_VPR' input port 'TXCOMSAS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 267: Model 'GTPE2_CHANNEL_VPR' input port 'TXCOMINIT' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 268: Model 'GTPE2_CHANNEL_VPR' input port 'TX8B10BEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 269: Model 'GTPE2_CHANNEL_VPR' input port 'SETERRSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 270: Model 'GTPE2_CHANNEL_VPR' input port 'RXUSERRDY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 271: Model 'GTPE2_CHANNEL_VPR' input port 'RXSYNCMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 272: Model 'GTPE2_CHANNEL_VPR' input port 'RXSYNCIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 273: Model 'GTPE2_CHANNEL_VPR' input port 'RXSYNCALLIN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 274: Model 'GTPE2_CHANNEL_VPR' input port 'RXSLIDE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 275: Model 'GTPE2_CHANNEL_VPR' input port 'RXRATEMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 276: Model 'GTPE2_CHANNEL_VPR' input port 'RXPRBSCNTRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 277: Model 'GTPE2_CHANNEL_VPR' input port 'RXPOLARITY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 278: Model 'GTPE2_CHANNEL_VPR' input port 'RXPMARESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 279: Model 'GTPE2_CHANNEL_VPR' input port 'RXPHOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 280: Model 'GTPE2_CHANNEL_VPR' input port 'RXPHDLYRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 281: Model 'GTPE2_CHANNEL_VPR' input port 'RXPHDLYPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 282: Model 'GTPE2_CHANNEL_VPR' input port 'RXPHALIGNEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 283: Model 'GTPE2_CHANNEL_VPR' input port 'RXPHALIGN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 284: Model 'GTPE2_CHANNEL_VPR' input port 'RXPCSRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 285: Model 'GTPE2_CHANNEL_VPR' input port 'RXPCOMMAALIGNEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 286: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 287: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTTESTOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 288: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTSTROBE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 289: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTPD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 290: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 291: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTNTRLEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 292: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 293: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSINTEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 294: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 295: Model 'GTPE2_CHANNEL_VPR' input port 'RXOSCALRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 296: Model 'GTPE2_CHANNEL_VPR' input port 'RXOOBRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 297: Model 'GTPE2_CHANNEL_VPR' input port 'RXMCOMMAALIGNEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 298: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 299: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMOSINTNTRLEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 300: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMLFOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 301: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMLFHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 302: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMHFOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 303: Model 'GTPE2_CHANNEL_VPR' input port 'RXLPMHFHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 304: Model 'GTPE2_CHANNEL_VPR' input port 'RXGEARBOXSLIP' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 305: Model 'GTPE2_CHANNEL_VPR' input port 'RXDLYSRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 306: Model 'GTPE2_CHANNEL_VPR' input port 'RXDLYOVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 307: Model 'GTPE2_CHANNEL_VPR' input port 'RXDLYEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 308: Model 'GTPE2_CHANNEL_VPR' input port 'RXDLYBYPASS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 309: Model 'GTPE2_CHANNEL_VPR' input port 'RXDFEXYDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 310: Model 'GTPE2_CHANNEL_VPR' input port 'RXDDIEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 311: Model 'GTPE2_CHANNEL_VPR' input port 'RXCOMMADETEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 312: Model 'GTPE2_CHANNEL_VPR' input port 'RXCHBONDSLAVE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 313: Model 'GTPE2_CHANNEL_VPR' input port 'RXCHBONDMASTER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 314: Model 'GTPE2_CHANNEL_VPR' input port 'RXCHBONDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 315: Model 'GTPE2_CHANNEL_VPR' input port 'RXCDRRESETRSV' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 316: Model 'GTPE2_CHANNEL_VPR' input port 'RXCDRRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 317: Model 'GTPE2_CHANNEL_VPR' input port 'RXCDROVRDEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 318: Model 'GTPE2_CHANNEL_VPR' input port 'RXCDRHOLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 319: Model 'GTPE2_CHANNEL_VPR' input port 'RXCDRFREQRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 320: Model 'GTPE2_CHANNEL_VPR' input port 'RXBUFRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 321: Model 'GTPE2_CHANNEL_VPR' input port 'RX8B10BEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 322: Model 'GTPE2_CHANNEL_VPR' input port 'RESETOVRD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 323: Model 'GTPE2_CHANNEL_VPR' input port 'PMARSVDIN4' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 324: Model 'GTPE2_CHANNEL_VPR' input port 'PMARSVDIN3' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 325: Model 'GTPE2_CHANNEL_VPR' input port 'PMARSVDIN2' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 326: Model 'GTPE2_CHANNEL_VPR' input port 'PMARSVDIN1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 327: Model 'GTPE2_CHANNEL_VPR' input port 'PMARSVDIN0' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 328: Model 'GTPE2_CHANNEL_VPR' input port 'GTTXRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 329: Model 'GTPE2_CHANNEL_VPR' input port 'GTRXRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 330: Model 'GTPE2_CHANNEL_VPR' input port 'GTRESETSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 331: Model 'GTPE2_CHANNEL_VPR' input port 'GTPRXP' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 332: Model 'GTPE2_CHANNEL_VPR' input port 'GTPRXN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 333: Model 'GTPE2_CHANNEL_VPR' input port 'EYESCANTRIGGER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 334: Model 'GTPE2_CHANNEL_VPR' input port 'EYESCANRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 335: Model 'GTPE2_CHANNEL_VPR' input port 'EYESCANMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 336: Model 'GTPE2_CHANNEL_VPR' input port 'DRPWE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 337: Model 'GTPE2_CHANNEL_VPR' input port 'DRPEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 338: Model 'GTPE2_CHANNEL_VPR' input port 'DMONFIFORESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 339: Model 'GTPE2_CHANNEL_VPR' input port 'CFGRESET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 340: Model 'GTPE2_CHANNEL_VPR' output port 'RXPHSLIPMONITOR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 341: Model 'GTPE2_CHANNEL_VPR' output port 'RXPHMONITOR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 342: Model 'GTPE2_CHANNEL_VPR' output port 'RXNOTINTABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 343: Model 'GTPE2_CHANNEL_VPR' output port 'RXDISPERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 344: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHBONDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 345: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 346: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHARISCOMMA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 347: Model 'GTPE2_CHANNEL_VPR' output port 'RXDATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 348: Model 'GTPE2_CHANNEL_VPR' output port 'RXSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 349: Model 'GTPE2_CHANNEL_VPR' output port 'RXHEADER' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 350: Model 'GTPE2_CHANNEL_VPR' output port 'RXBUFSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 351: Model 'GTPE2_CHANNEL_VPR' output port 'TXBUFSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 352: Model 'GTPE2_CHANNEL_VPR' output port 'RXSTARTOFSEQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 353: Model 'GTPE2_CHANNEL_VPR' output port 'RXDATAVALID' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 354: Model 'GTPE2_CHANNEL_VPR' output port 'RXCLKCORCNT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 355: Model 'GTPE2_CHANNEL_VPR' output port 'PCSRSVDOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 356: Model 'GTPE2_CHANNEL_VPR' output port 'DRPDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 357: Model 'GTPE2_CHANNEL_VPR' output port 'DMONITOROUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 358: Model 'GTPE2_CHANNEL_VPR' output port 'TXSYNCOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 359: Model 'GTPE2_CHANNEL_VPR' output port 'TXSYNCDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 360: Model 'GTPE2_CHANNEL_VPR' output port 'TXRESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 361: Model 'GTPE2_CHANNEL_VPR' output port 'TXRATEDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 362: Model 'GTPE2_CHANNEL_VPR' output port 'TXPMARESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 363: Model 'GTPE2_CHANNEL_VPR' output port 'TXPHINITDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 364: Model 'GTPE2_CHANNEL_VPR' output port 'TXPHALIGNDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 365: Model 'GTPE2_CHANNEL_VPR' output port 'TXOUTCLKPCS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 366: Model 'GTPE2_CHANNEL_VPR' output port 'TXOUTCLKFABRIC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 367: Model 'GTPE2_CHANNEL_VPR' output port 'TXOUTCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 368: Model 'GTPE2_CHANNEL_VPR' output port 'TXGEARBOXREADY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 369: Model 'GTPE2_CHANNEL_VPR' output port 'TXDLYSRESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 370: Model 'GTPE2_CHANNEL_VPR' output port 'TXCOMFINISH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 371: Model 'GTPE2_CHANNEL_VPR' output port 'RXVALID' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 372: Model 'GTPE2_CHANNEL_VPR' output port 'RXSYNCOUT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 373: Model 'GTPE2_CHANNEL_VPR' output port 'RXSYNCDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 374: Model 'GTPE2_CHANNEL_VPR' output port 'RXRESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 375: Model 'GTPE2_CHANNEL_VPR' output port 'RXRATEDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 376: Model 'GTPE2_CHANNEL_VPR' output port 'RXPRBSERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 377: Model 'GTPE2_CHANNEL_VPR' output port 'RXPMARESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 378: Model 'GTPE2_CHANNEL_VPR' output port 'RXPHALIGNDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 379: Model 'GTPE2_CHANNEL_VPR' output port 'RXOUTCLKPCS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 380: Model 'GTPE2_CHANNEL_VPR' output port 'RXOUTCLKFABRIC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 381: Model 'GTPE2_CHANNEL_VPR' output port 'RXOUTCLK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 382: Model 'GTPE2_CHANNEL_VPR' output port 'RXOSINTSTROBESTARTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 383: Model 'GTPE2_CHANNEL_VPR' output port 'RXOSINTSTROBEDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 384: Model 'GTPE2_CHANNEL_VPR' output port 'RXOSINTSTARTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 385: Model 'GTPE2_CHANNEL_VPR' output port 'RXOSINTDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 386: Model 'GTPE2_CHANNEL_VPR' output port 'RXHEADERVALID' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 387: Model 'GTPE2_CHANNEL_VPR' output port 'RXELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 388: Model 'GTPE2_CHANNEL_VPR' output port 'RXDLYSRESETDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 389: Model 'GTPE2_CHANNEL_VPR' output port 'RXCOMWAKEDET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 390: Model 'GTPE2_CHANNEL_VPR' output port 'RXCOMSASDET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 391: Model 'GTPE2_CHANNEL_VPR' output port 'RXCOMMADET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 392: Model 'GTPE2_CHANNEL_VPR' output port 'RXCOMINITDET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 393: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHANREALIGN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 394: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHANISALIGNED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 395: Model 'GTPE2_CHANNEL_VPR' output port 'RXCHANBONDSEQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 396: Model 'GTPE2_CHANNEL_VPR' output port 'RXCDRLOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 397: Model 'GTPE2_CHANNEL_VPR' output port 'RXBYTEREALIGN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 398: Model 'GTPE2_CHANNEL_VPR' output port 'RXBYTEISALIGNED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 399: Model 'GTPE2_CHANNEL_VPR' output port 'PMARSVDOUT1' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 400: Model 'GTPE2_CHANNEL_VPR' output port 'PMARSVDOUT0' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 401: Model 'GTPE2_CHANNEL_VPR' output port 'PHYSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 402: Model 'GTPE2_CHANNEL_VPR' output port 'GTPTXP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 403: Model 'GTPE2_CHANNEL_VPR' output port 'GTPTXN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 404: Model 'GTPE2_CHANNEL_VPR' output port 'EYESCANDATAERROR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 405: Model 'GTPE2_CHANNEL_VPR' output port 'DRPRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 406: Model 'IBUFDS_GTE2_VPR' input port 'CEB' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 407: Model 'IBUFDS_GTE2_VPR' output port 'ODIV2' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 408: Model 'IBUFDS_GTE2_VPR' output port 'O' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 409: Model 'IPAD_GTP_VPR' input port 'I' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 410: Model 'IPAD_GTP_VPR' output port 'O' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 411: Model 'OPAD_GTP_VPR' input port 'I' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 412: Model 'OPAD_GTP_VPR' output port 'O' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 413: Model 'PCIE_2_1_VPR' input port 'TRNTSTR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 414: Model 'PCIE_2_1_VPR' input port 'TRNTSRCRDY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 415: Model 'PCIE_2_1_VPR' input port 'TRNTSRCDSC' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 416: Model 'PCIE_2_1_VPR' input port 'TRNTSOF' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 417: Model 'PCIE_2_1_VPR' input port 'TRNTREM' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 418: Model 'PCIE_2_1_VPR' input port 'TRNTERRFWD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 419: Model 'PCIE_2_1_VPR' input port 'TRNTEOF' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 420: Model 'PCIE_2_1_VPR' input port 'TRNTECRCGEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 421: Model 'PCIE_2_1_VPR' input port 'TRNTDLLPSRCRDY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 422: Model 'PCIE_2_1_VPR' input port 'TRNTDLLPDATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 423: Model 'PCIE_2_1_VPR' input port 'TRNTD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 424: Model 'PCIE_2_1_VPR' input port 'TRNTCFGGNT' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 425: Model 'PCIE_2_1_VPR' input port 'TRNRNPREQ' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 426: Model 'PCIE_2_1_VPR' input port 'TRNRNPOK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 427: Model 'PCIE_2_1_VPR' input port 'TRNRFCPRET' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 428: Model 'PCIE_2_1_VPR' input port 'TRNRDSTRDY' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 429: Model 'PCIE_2_1_VPR' input port 'TRNFCSEL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 430: Model 'PCIE_2_1_VPR' input port 'TLRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 431: Model 'PCIE_2_1_VPR' input port 'TL2PPMSUSPENDREQ' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 432: Model 'PCIE_2_1_VPR' input port 'TL2ASPMSUSPENDCREDITCHECK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 433: Model 'PCIE_2_1_VPR' input port 'SYSRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 434: Model 'PCIE_2_1_VPR' input port 'PLUPSTREAMPREFERDEEMPH' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 435: Model 'PCIE_2_1_VPR' input port 'PLTRANSMITHOTRST' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 436: Model 'PCIE_2_1_VPR' input port 'PLRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 437: Model 'PCIE_2_1_VPR' input port 'PLDOWNSTREAMDEEMPHSOURCE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 438: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLTSSMSTALL' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 439: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLTSSMNEWVLD' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 440: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLTSSMNEW' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 441: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLINKWIDTH' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 442: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLINKSPEED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 443: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLINKCHANGE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 444: Model 'PCIE_2_1_VPR' input port 'PLDIRECTEDLINKAUTON' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 445: Model 'PCIE_2_1_VPR' input port 'PLDBGMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 446: Model 'PCIE_2_1_VPR' input port 'PL2DIRECTEDLSTATE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 447: Model 'PCIE_2_1_VPR' input port 'PIPERX7VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 448: Model 'PCIE_2_1_VPR' input port 'PIPERX7STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 449: Model 'PCIE_2_1_VPR' input port 'PIPERX7PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 450: Model 'PCIE_2_1_VPR' input port 'PIPERX7ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 451: Model 'PCIE_2_1_VPR' input port 'PIPERX7DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 452: Model 'PCIE_2_1_VPR' input port 'PIPERX7CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 453: Model 'PCIE_2_1_VPR' input port 'PIPERX7CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 454: Model 'PCIE_2_1_VPR' input port 'PIPERX6VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 455: Model 'PCIE_2_1_VPR' input port 'PIPERX6STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 456: Model 'PCIE_2_1_VPR' input port 'PIPERX6PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 457: Model 'PCIE_2_1_VPR' input port 'PIPERX6ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 458: Model 'PCIE_2_1_VPR' input port 'PIPERX6DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 459: Model 'PCIE_2_1_VPR' input port 'PIPERX6CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 460: Model 'PCIE_2_1_VPR' input port 'PIPERX6CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 461: Model 'PCIE_2_1_VPR' input port 'PIPERX5VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 462: Model 'PCIE_2_1_VPR' input port 'PIPERX5STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 463: Model 'PCIE_2_1_VPR' input port 'PIPERX5PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 464: Model 'PCIE_2_1_VPR' input port 'PIPERX5ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 465: Model 'PCIE_2_1_VPR' input port 'PIPERX5DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 466: Model 'PCIE_2_1_VPR' input port 'PIPERX5CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 467: Model 'PCIE_2_1_VPR' input port 'PIPERX5CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 468: Model 'PCIE_2_1_VPR' input port 'PIPERX4VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 469: Model 'PCIE_2_1_VPR' input port 'PIPERX4STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 470: Model 'PCIE_2_1_VPR' input port 'PIPERX4PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 471: Model 'PCIE_2_1_VPR' input port 'PIPERX4ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 472: Model 'PCIE_2_1_VPR' input port 'PIPERX4DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 473: Model 'PCIE_2_1_VPR' input port 'PIPERX4CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 474: Model 'PCIE_2_1_VPR' input port 'PIPERX4CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 475: Model 'PCIE_2_1_VPR' input port 'PIPERX3VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 476: Model 'PCIE_2_1_VPR' input port 'PIPERX3STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 477: Model 'PCIE_2_1_VPR' input port 'PIPERX3PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 478: Model 'PCIE_2_1_VPR' input port 'PIPERX3ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 479: Model 'PCIE_2_1_VPR' input port 'PIPERX3DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 480: Model 'PCIE_2_1_VPR' input port 'PIPERX3CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 481: Model 'PCIE_2_1_VPR' input port 'PIPERX3CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 482: Model 'PCIE_2_1_VPR' input port 'PIPERX2VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 483: Model 'PCIE_2_1_VPR' input port 'PIPERX2STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 484: Model 'PCIE_2_1_VPR' input port 'PIPERX2PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 485: Model 'PCIE_2_1_VPR' input port 'PIPERX2ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 486: Model 'PCIE_2_1_VPR' input port 'PIPERX2DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 487: Model 'PCIE_2_1_VPR' input port 'PIPERX2CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 488: Model 'PCIE_2_1_VPR' input port 'PIPERX2CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 489: Model 'PCIE_2_1_VPR' input port 'PIPERX1VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 490: Model 'PCIE_2_1_VPR' input port 'PIPERX1STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 491: Model 'PCIE_2_1_VPR' input port 'PIPERX1PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 492: Model 'PCIE_2_1_VPR' input port 'PIPERX1ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 493: Model 'PCIE_2_1_VPR' input port 'PIPERX1DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 494: Model 'PCIE_2_1_VPR' input port 'PIPERX1CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 495: Model 'PCIE_2_1_VPR' input port 'PIPERX1CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 496: Model 'PCIE_2_1_VPR' input port 'PIPERX0VALID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 497: Model 'PCIE_2_1_VPR' input port 'PIPERX0STATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 498: Model 'PCIE_2_1_VPR' input port 'PIPERX0PHYSTATUS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 499: Model 'PCIE_2_1_VPR' input port 'PIPERX0ELECIDLE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 500: Model 'PCIE_2_1_VPR' input port 'PIPERX0DATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 501: Model 'PCIE_2_1_VPR' input port 'PIPERX0CHARISK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 502: Model 'PCIE_2_1_VPR' input port 'PIPERX0CHANISALIGNED' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 503: Model 'PCIE_2_1_VPR' input port 'MIMTXRDATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 504: Model 'PCIE_2_1_VPR' input port 'MIMRXRDATA' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 505: Model 'PCIE_2_1_VPR' input port 'LL2TLPRCV' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 506: Model 'PCIE_2_1_VPR' input port 'LL2SUSPENDNOW' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 507: Model 'PCIE_2_1_VPR' input port 'LL2SENDPMACK' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 508: Model 'PCIE_2_1_VPR' input port 'LL2SENDENTERL23' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 509: Model 'PCIE_2_1_VPR' input port 'LL2SENDENTERL1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 510: Model 'PCIE_2_1_VPR' input port 'LL2SENDASREQL1' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 511: Model 'PCIE_2_1_VPR' input port 'FUNCLVLRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 512: Model 'PCIE_2_1_VPR' input port 'DRPWE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 513: Model 'PCIE_2_1_VPR' input port 'DRPEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 514: Model 'PCIE_2_1_VPR' input port 'DRPDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 515: Model 'PCIE_2_1_VPR' input port 'DRPADDR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 516: Model 'PCIE_2_1_VPR' input port 'DLRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 517: Model 'PCIE_2_1_VPR' input port 'DBGSUBMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 518: Model 'PCIE_2_1_VPR' input port 'DBGMODE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 519: Model 'PCIE_2_1_VPR' input port 'CMSTICKYRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 520: Model 'PCIE_2_1_VPR' input port 'CMRSTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 521: Model 'PCIE_2_1_VPR' input port 'CFGVENDID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 522: Model 'PCIE_2_1_VPR' input port 'CFGTRNPENDINGN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 523: Model 'PCIE_2_1_VPR' input port 'CFGSUBSYSVENDID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 524: Model 'PCIE_2_1_VPR' input port 'CFGSUBSYSID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 525: Model 'PCIE_2_1_VPR' input port 'CFGREVID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 526: Model 'PCIE_2_1_VPR' input port 'CFGPORTNUMBER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 527: Model 'PCIE_2_1_VPR' input port 'CFGPMWAKEN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 528: Model 'PCIE_2_1_VPR' input port 'CFGPMTURNOFFOKN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 529: Model 'PCIE_2_1_VPR' input port 'CFGPMSENDPMETON' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 530: Model 'PCIE_2_1_VPR' input port 'CFGPMHALTASPML1N' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 531: Model 'PCIE_2_1_VPR' input port 'CFGPMHALTASPML0SN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 532: Model 'PCIE_2_1_VPR' input port 'CFGPMFORCESTATEENN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 533: Model 'PCIE_2_1_VPR' input port 'CFGPMFORCESTATE' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 534: Model 'PCIE_2_1_VPR' input port 'CFGPCIECAPINTERRUPTMSGNUM' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 535: Model 'PCIE_2_1_VPR' input port 'CFGMGMTWRRW1CASRWN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 536: Model 'PCIE_2_1_VPR' input port 'CFGMGMTWRREADONLYN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 537: Model 'PCIE_2_1_VPR' input port 'CFGMGMTWRENN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 538: Model 'PCIE_2_1_VPR' input port 'CFGMGMTRDENN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 539: Model 'PCIE_2_1_VPR' input port 'CFGMGMTDWADDR' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 540: Model 'PCIE_2_1_VPR' input port 'CFGMGMTDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 541: Model 'PCIE_2_1_VPR' input port 'CFGMGMTBYTEENN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 542: Model 'PCIE_2_1_VPR' input port 'CFGINTERRUPTSTATN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 543: Model 'PCIE_2_1_VPR' input port 'CFGINTERRUPTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 544: Model 'PCIE_2_1_VPR' input port 'CFGINTERRUPTDI' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 545: Model 'PCIE_2_1_VPR' input port 'CFGINTERRUPTASSERTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 546: Model 'PCIE_2_1_VPR' input port 'CFGFORCEMPS' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 547: Model 'PCIE_2_1_VPR' input port 'CFGFORCEEXTENDEDSYNCON' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 548: Model 'PCIE_2_1_VPR' input port 'CFGFORCECOMMONCLOCKOFF' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 549: Model 'PCIE_2_1_VPR' input port 'CFGERRURN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 550: Model 'PCIE_2_1_VPR' input port 'CFGERRTLPCPLHEADER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 551: Model 'PCIE_2_1_VPR' input port 'CFGERRPOSTEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 552: Model 'PCIE_2_1_VPR' input port 'CFGERRPOISONEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 553: Model 'PCIE_2_1_VPR' input port 'CFGERRNORECOVERYN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 554: Model 'PCIE_2_1_VPR' input port 'CFGERRMCBLOCKEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 555: Model 'PCIE_2_1_VPR' input port 'CFGERRMALFORMEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 556: Model 'PCIE_2_1_VPR' input port 'CFGERRLOCKEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 557: Model 'PCIE_2_1_VPR' input port 'CFGERRINTERNALUNCORN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 558: Model 'PCIE_2_1_VPR' input port 'CFGERRINTERNALCORN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 559: Model 'PCIE_2_1_VPR' input port 'CFGERRECRCN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 560: Model 'PCIE_2_1_VPR' input port 'CFGERRCPLUNEXPECTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 561: Model 'PCIE_2_1_VPR' input port 'CFGERRCPLTIMEOUTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 562: Model 'PCIE_2_1_VPR' input port 'CFGERRCPLABORTN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 563: Model 'PCIE_2_1_VPR' input port 'CFGERRCORN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 564: Model 'PCIE_2_1_VPR' input port 'CFGERRATOMICEGRESSBLOCKEDN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 565: Model 'PCIE_2_1_VPR' input port 'CFGERRAERHEADERLOG' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 566: Model 'PCIE_2_1_VPR' input port 'CFGERRACSN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 567: Model 'PCIE_2_1_VPR' input port 'CFGDSN' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 568: Model 'PCIE_2_1_VPR' input port 'CFGDSFUNCTIONNUMBER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 569: Model 'PCIE_2_1_VPR' input port 'CFGDSDEVICENUMBER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 570: Model 'PCIE_2_1_VPR' input port 'CFGDSBUSNUMBER' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 571: Model 'PCIE_2_1_VPR' input port 'CFGDEVID' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 572: Model 'PCIE_2_1_VPR' input port 'CFGAERINTERRUPTMSGNUM' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 573: Model 'PCIE_2_1_VPR' output port 'USERRSTN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 574: Model 'PCIE_2_1_VPR' output port 'TRNTERRDROP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 575: Model 'PCIE_2_1_VPR' output port 'TRNTDSTRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 576: Model 'PCIE_2_1_VPR' output port 'TRNTDLLPDSTRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 577: Model 'PCIE_2_1_VPR' output port 'TRNTCFGREQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 578: Model 'PCIE_2_1_VPR' output port 'TRNTBUFAV' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 579: Model 'PCIE_2_1_VPR' output port 'TRNRSRCRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 580: Model 'PCIE_2_1_VPR' output port 'TRNRSRCDSC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 581: Model 'PCIE_2_1_VPR' output port 'TRNRSOF' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 582: Model 'PCIE_2_1_VPR' output port 'TRNRREM' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 583: Model 'PCIE_2_1_VPR' output port 'TRNRERRFWD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 584: Model 'PCIE_2_1_VPR' output port 'TRNREOF' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 585: Model 'PCIE_2_1_VPR' output port 'TRNRECRCERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 586: Model 'PCIE_2_1_VPR' output port 'TRNRDLLPSRCRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 587: Model 'PCIE_2_1_VPR' output port 'TRNRDLLPDATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 588: Model 'PCIE_2_1_VPR' output port 'TRNRD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 589: Model 'PCIE_2_1_VPR' output port 'TRNRBARHIT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 590: Model 'PCIE_2_1_VPR' output port 'TRNLNKUP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 591: Model 'PCIE_2_1_VPR' output port 'TRNFCPH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 592: Model 'PCIE_2_1_VPR' output port 'TRNFCPD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 593: Model 'PCIE_2_1_VPR' output port 'TRNFCNPH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 594: Model 'PCIE_2_1_VPR' output port 'TRNFCNPD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 595: Model 'PCIE_2_1_VPR' output port 'TRNFCCPLH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 596: Model 'PCIE_2_1_VPR' output port 'TRNFCCPLD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 597: Model 'PCIE_2_1_VPR' output port 'TL2PPMSUSPENDOK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 598: Model 'PCIE_2_1_VPR' output port 'TL2ERRRXOVERFLOW' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 599: Model 'PCIE_2_1_VPR' output port 'TL2ERRMALFORMED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 600: Model 'PCIE_2_1_VPR' output port 'TL2ERRHDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 601: Model 'PCIE_2_1_VPR' output port 'TL2ERRFCPE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 602: Model 'PCIE_2_1_VPR' output port 'TL2ASPMSUSPENDREQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 603: Model 'PCIE_2_1_VPR' output port 'TL2ASPMSUSPENDCREDITCHECKOK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 604: Model 'PCIE_2_1_VPR' output port 'RECEIVEDFUNCLVLRSTN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 605: Model 'PCIE_2_1_VPR' output port 'PLTXPMSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 606: Model 'PCIE_2_1_VPR' output port 'PLSELLNKWIDTH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 607: Model 'PCIE_2_1_VPR' output port 'PLSELLNKRATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 608: Model 'PCIE_2_1_VPR' output port 'PLRXPMSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 609: Model 'PCIE_2_1_VPR' output port 'PLRECEIVEDHOTRST' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 610: Model 'PCIE_2_1_VPR' output port 'PLPHYLNKUPN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 611: Model 'PCIE_2_1_VPR' output port 'PLLTSSMSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 612: Model 'PCIE_2_1_VPR' output port 'PLLINKUPCFGCAP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 613: Model 'PCIE_2_1_VPR' output port 'PLLINKPARTNERGEN2SUPPORTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 614: Model 'PCIE_2_1_VPR' output port 'PLLINKGEN2CAP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 615: Model 'PCIE_2_1_VPR' output port 'PLLANEREVERSALMODE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 616: Model 'PCIE_2_1_VPR' output port 'PLINITIALLINKWIDTH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 617: Model 'PCIE_2_1_VPR' output port 'PLDIRECTEDCHANGEDONE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 618: Model 'PCIE_2_1_VPR' output port 'PLDBGVEC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 619: Model 'PCIE_2_1_VPR' output port 'PL2SUSPENDOK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 620: Model 'PCIE_2_1_VPR' output port 'PL2RXPMSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 621: Model 'PCIE_2_1_VPR' output port 'PL2RXELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 622: Model 'PCIE_2_1_VPR' output port 'PL2RECOVERY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 623: Model 'PCIE_2_1_VPR' output port 'PL2RECEIVERERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 624: Model 'PCIE_2_1_VPR' output port 'PL2LINKUP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 625: Model 'PCIE_2_1_VPR' output port 'PL2L0REQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 626: Model 'PCIE_2_1_VPR' output port 'PIPETXRESET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 627: Model 'PCIE_2_1_VPR' output port 'PIPETXRCVRDET' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 628: Model 'PCIE_2_1_VPR' output port 'PIPETXRATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 629: Model 'PCIE_2_1_VPR' output port 'PIPETXMARGIN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 630: Model 'PCIE_2_1_VPR' output port 'PIPETXDEEMPH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 631: Model 'PCIE_2_1_VPR' output port 'PIPETX7POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 632: Model 'PCIE_2_1_VPR' output port 'PIPETX7ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 633: Model 'PCIE_2_1_VPR' output port 'PIPETX7DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 634: Model 'PCIE_2_1_VPR' output port 'PIPETX7COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 635: Model 'PCIE_2_1_VPR' output port 'PIPETX7CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 636: Model 'PCIE_2_1_VPR' output port 'PIPETX6POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 637: Model 'PCIE_2_1_VPR' output port 'PIPETX6ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 638: Model 'PCIE_2_1_VPR' output port 'PIPETX6DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 639: Model 'PCIE_2_1_VPR' output port 'PIPETX6COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 640: Model 'PCIE_2_1_VPR' output port 'PIPETX6CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 641: Model 'PCIE_2_1_VPR' output port 'PIPETX5POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 642: Model 'PCIE_2_1_VPR' output port 'PIPETX5ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 643: Model 'PCIE_2_1_VPR' output port 'PIPETX5DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 644: Model 'PCIE_2_1_VPR' output port 'PIPETX5COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 645: Model 'PCIE_2_1_VPR' output port 'PIPETX5CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 646: Model 'PCIE_2_1_VPR' output port 'PIPETX4POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 647: Model 'PCIE_2_1_VPR' output port 'PIPETX4ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 648: Model 'PCIE_2_1_VPR' output port 'PIPETX4DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 649: Model 'PCIE_2_1_VPR' output port 'PIPETX4COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 650: Model 'PCIE_2_1_VPR' output port 'PIPETX4CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 651: Model 'PCIE_2_1_VPR' output port 'PIPETX3POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 652: Model 'PCIE_2_1_VPR' output port 'PIPETX3ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 653: Model 'PCIE_2_1_VPR' output port 'PIPETX3DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 654: Model 'PCIE_2_1_VPR' output port 'PIPETX3COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 655: Model 'PCIE_2_1_VPR' output port 'PIPETX3CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 656: Model 'PCIE_2_1_VPR' output port 'PIPETX2POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 657: Model 'PCIE_2_1_VPR' output port 'PIPETX2ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 658: Model 'PCIE_2_1_VPR' output port 'PIPETX2DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 659: Model 'PCIE_2_1_VPR' output port 'PIPETX2COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 660: Model 'PCIE_2_1_VPR' output port 'PIPETX2CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 661: Model 'PCIE_2_1_VPR' output port 'PIPETX1POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 662: Model 'PCIE_2_1_VPR' output port 'PIPETX1ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 663: Model 'PCIE_2_1_VPR' output port 'PIPETX1DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 664: Model 'PCIE_2_1_VPR' output port 'PIPETX1COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 665: Model 'PCIE_2_1_VPR' output port 'PIPETX1CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 666: Model 'PCIE_2_1_VPR' output port 'PIPETX0POWERDOWN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 667: Model 'PCIE_2_1_VPR' output port 'PIPETX0ELECIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 668: Model 'PCIE_2_1_VPR' output port 'PIPETX0DATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 669: Model 'PCIE_2_1_VPR' output port 'PIPETX0COMPLIANCE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 670: Model 'PCIE_2_1_VPR' output port 'PIPETX0CHARISK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 671: Model 'PCIE_2_1_VPR' output port 'PIPERX7POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 672: Model 'PCIE_2_1_VPR' output port 'PIPERX6POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 673: Model 'PCIE_2_1_VPR' output port 'PIPERX5POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 674: Model 'PCIE_2_1_VPR' output port 'PIPERX4POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 675: Model 'PCIE_2_1_VPR' output port 'PIPERX3POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 676: Model 'PCIE_2_1_VPR' output port 'PIPERX2POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 677: Model 'PCIE_2_1_VPR' output port 'PIPERX1POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 678: Model 'PCIE_2_1_VPR' output port 'PIPERX0POLARITY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 679: Model 'PCIE_2_1_VPR' output port 'MIMTXWEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 680: Model 'PCIE_2_1_VPR' output port 'MIMTXWDATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 681: Model 'PCIE_2_1_VPR' output port 'MIMTXWADDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 682: Model 'PCIE_2_1_VPR' output port 'MIMTXREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 683: Model 'PCIE_2_1_VPR' output port 'MIMTXRADDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 684: Model 'PCIE_2_1_VPR' output port 'MIMRXWEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 685: Model 'PCIE_2_1_VPR' output port 'MIMRXWDATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 686: Model 'PCIE_2_1_VPR' output port 'MIMRXWADDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 687: Model 'PCIE_2_1_VPR' output port 'MIMRXREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 688: Model 'PCIE_2_1_VPR' output port 'MIMRXRADDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 689: Model 'PCIE_2_1_VPR' output port 'LNKCLKEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 690: Model 'PCIE_2_1_VPR' output port 'LL2TXIDLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 691: Model 'PCIE_2_1_VPR' output port 'LL2TFCINIT2SEQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 692: Model 'PCIE_2_1_VPR' output port 'LL2TFCINIT1SEQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 693: Model 'PCIE_2_1_VPR' output port 'LL2SUSPENDOK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 694: Model 'PCIE_2_1_VPR' output port 'LL2REPLAYTOERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 695: Model 'PCIE_2_1_VPR' output port 'LL2REPLAYROERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 696: Model 'PCIE_2_1_VPR' output port 'LL2RECEIVERERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 697: Model 'PCIE_2_1_VPR' output port 'LL2PROTOCOLERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 698: Model 'PCIE_2_1_VPR' output port 'LL2LINKSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 699: Model 'PCIE_2_1_VPR' output port 'LL2BADTLPERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 700: Model 'PCIE_2_1_VPR' output port 'LL2BADDLLPERR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 701: Model 'PCIE_2_1_VPR' output port 'DRPRDY' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 702: Model 'PCIE_2_1_VPR' output port 'DRPDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 703: Model 'PCIE_2_1_VPR' output port 'DBGVECC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 704: Model 'PCIE_2_1_VPR' output port 'DBGVECB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 705: Model 'PCIE_2_1_VPR' output port 'DBGVECA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 706: Model 'PCIE_2_1_VPR' output port 'DBGSCLRK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 707: Model 'PCIE_2_1_VPR' output port 'DBGSCLRJ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 708: Model 'PCIE_2_1_VPR' output port 'DBGSCLRI' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 709: Model 'PCIE_2_1_VPR' output port 'DBGSCLRH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 710: Model 'PCIE_2_1_VPR' output port 'DBGSCLRG' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 711: Model 'PCIE_2_1_VPR' output port 'DBGSCLRF' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 712: Model 'PCIE_2_1_VPR' output port 'DBGSCLRE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 713: Model 'PCIE_2_1_VPR' output port 'DBGSCLRD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 714: Model 'PCIE_2_1_VPR' output port 'DBGSCLRC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 715: Model 'PCIE_2_1_VPR' output port 'DBGSCLRB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 716: Model 'PCIE_2_1_VPR' output port 'DBGSCLRA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 717: Model 'PCIE_2_1_VPR' output port 'CFGVCTCVCMAP' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 718: Model 'PCIE_2_1_VPR' output port 'CFGTRANSACTIONTYPE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 719: Model 'PCIE_2_1_VPR' output port 'CFGTRANSACTIONADDR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 720: Model 'PCIE_2_1_VPR' output port 'CFGTRANSACTION' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 721: Model 'PCIE_2_1_VPR' output port 'CFGSLOTCONTROLELECTROMECHILCTLPULSE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 722: Model 'PCIE_2_1_VPR' output port 'CFGROOTCONTROLSYSERRNONFATALERREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 723: Model 'PCIE_2_1_VPR' output port 'CFGROOTCONTROLSYSERRFATALERREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 724: Model 'PCIE_2_1_VPR' output port 'CFGROOTCONTROLSYSERRCORRERREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 725: Model 'PCIE_2_1_VPR' output port 'CFGROOTCONTROLPMEINTEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 726: Model 'PCIE_2_1_VPR' output port 'CFGPMRCVREQACKN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 727: Model 'PCIE_2_1_VPR' output port 'CFGPMRCVENTERL23N' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 728: Model 'PCIE_2_1_VPR' output port 'CFGPMRCVENTERL1N' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 729: Model 'PCIE_2_1_VPR' output port 'CFGPMRCVASREQL1N' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 730: Model 'PCIE_2_1_VPR' output port 'CFGPMCSRPOWERSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 731: Model 'PCIE_2_1_VPR' output port 'CFGPMCSRPMESTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 732: Model 'PCIE_2_1_VPR' output port 'CFGPMCSRPMEEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 733: Model 'PCIE_2_1_VPR' output port 'CFGPCIELINKSTATE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 734: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDUNLOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 735: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDSETSLOTPOWERLIMIT' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 736: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDPMPME' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 737: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDPMETOACK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 738: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDPMETO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 739: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDPMASNAK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 740: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDERRNONFATAL' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 741: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDERRFATAL' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 742: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDERRCOR' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 743: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDDEASSERTINTD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 744: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDDEASSERTINTC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 745: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDDEASSERTINTB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 746: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDDEASSERTINTA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 747: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDASSERTINTD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 748: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDASSERTINTC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 749: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDASSERTINTB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 750: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVEDASSERTINTA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 751: Model 'PCIE_2_1_VPR' output port 'CFGMSGRECEIVED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 752: Model 'PCIE_2_1_VPR' output port 'CFGMSGDATA' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 753: Model 'PCIE_2_1_VPR' output port 'CFGMGMTRDWRDONEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 754: Model 'PCIE_2_1_VPR' output port 'CFGMGMTDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 755: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSNEGOTIATEDWIDTH' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 756: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSLINKTRAINING' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 757: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSDLLACTIVE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 758: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSCURRENTSPEED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 759: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSBANDWIDTHSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 760: Model 'PCIE_2_1_VPR' output port 'CFGLINKSTATUSAUTOBANDWIDTHSTATUS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 761: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLRETRAINLINK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 762: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLRCB' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 763: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLLINKDISABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 764: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLHWAUTOWIDTHDIS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 765: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLEXTENDEDSYNC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 766: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLCOMMONCLOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 767: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLCLOCKPMEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 768: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLBANDWIDTHINTEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 769: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLAUTOBANDWIDTHINTEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 770: Model 'PCIE_2_1_VPR' output port 'CFGLINKCONTROLASPMCONTROL' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 771: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTRDYN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 772: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTMSIXFM' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 773: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTMSIXENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 774: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTMSIENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 775: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTMMENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 776: Model 'PCIE_2_1_VPR' output port 'CFGINTERRUPTDO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 777: Model 'PCIE_2_1_VPR' output port 'CFGERRCPLRDYN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 778: Model 'PCIE_2_1_VPR' output port 'CFGERRAERHEADERLOGSETN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 779: Model 'PCIE_2_1_VPR' output port 'CFGDEVSTATUSURDETECTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 780: Model 'PCIE_2_1_VPR' output port 'CFGDEVSTATUSNONFATALERRDETECTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 781: Model 'PCIE_2_1_VPR' output port 'CFGDEVSTATUSFATALERRDETECTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 782: Model 'PCIE_2_1_VPR' output port 'CFGDEVSTATUSCORRERRDETECTED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 783: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLURERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 784: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLPHANTOMEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 785: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLNOSNOOPEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 786: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLNONFATALREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 787: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLMAXREADREQ' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 788: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLMAXPAYLOAD' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 789: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLFATALERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 790: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLEXTTAGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 791: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLENABLERO' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 792: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLCORRERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 793: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROLAUXPOWEREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 794: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2TLPPREFIXBLOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 795: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2LTREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 796: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2IDOREQEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 797: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2IDOCPLEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 798: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2CPLTIMEOUTVAL' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 799: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2CPLTIMEOUTDIS' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 800: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2ATOMICREQUESTEREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 801: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2ATOMICEGRESSBLOCK' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 802: Model 'PCIE_2_1_VPR' output port 'CFGDEVCONTROL2ARIFORWARDEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 803: Model 'PCIE_2_1_VPR' output port 'CFGCOMMANDSERREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 804: Model 'PCIE_2_1_VPR' output port 'CFGCOMMANDMEMENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 805: Model 'PCIE_2_1_VPR' output port 'CFGCOMMANDIOENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 806: Model 'PCIE_2_1_VPR' output port 'CFGCOMMANDINTERRUPTDISABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 807: Model 'PCIE_2_1_VPR' output port 'CFGCOMMANDBUSMASTERENABLE' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 808: Model 'PCIE_2_1_VPR' output port 'CFGBRIDGESERREN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 809: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRNONFATALERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 810: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRNONFATALERRRECEIVED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 811: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRFATALERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 812: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRFATALERRRECEIVED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 813: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRCORRERRREPORTINGEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 814: Model 'PCIE_2_1_VPR' output port 'CFGAERROOTERRCORRERRRECEIVED' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 815: Model 'PCIE_2_1_VPR' output port 'CFGAERECRCGENEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 816: Model 'PCIE_2_1_VPR' output port 'CFGAERECRCCHECKEN' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 817: Model 'VCC' output port 'VCC' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 818: Model 'GND' output port 'GND' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 819: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'D' of model '.latch', port is a sequential input but has neither T_setup nor T_hold specified
+Warning 820: <pb_type> 'empty' timing-annotation/<model> mismatch on port 'Q' of model '.latch', port is a sequential output but has neither min nor max T_clock_to_Q specified
+Loading Architecture Description took 1.32 seconds (max_rss 60.1 MiB, delta_rss +54.3 MiB)
+
+Warning 821: Non-zero switch output capacitance (4e-15) has no effect when switch 'buffer' is used for connection block inputs
+Timing analysis: ON
+Circuit netlist file: nand_gate.net
+Circuit placement file: nand_gate.place
+Circuit routing file: nand_gate.route
+Circuit SDC file: nand_gate.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 500
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 0
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH_BOUNDED
+RouterOpts.fixed_channel_width: 500
+RouterOpts.check_route: QUICK
+RouterOpts.acc_fac: 0.700000
+RouterOpts.bb_factor: 10
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 2.828000
+RouterOpts.pres_fac_mult: 1.200000
+RouterOpts.max_router_iterations: 500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: false
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.800000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 0.800000
+RouterOpts.high_fanout_threshold: -1
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: OFF
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: EXTENDED_MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BUCKET_HEAP_APPROXIMATION
+RouterOpts.routing_failure_predictor = OFF
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+
+Building complex block graph
+Building complex block graph took 0.05 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Circuit file: nand_gate.eblif
+Load circuit
+Load circuit took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Clean circuit
+Absorbed 0 LUT buffers
+Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    1 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 2
+Swept block(s)      : 2
+Constant Pins Marked: 4
+Clean circuit took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Compress circuit
+Compress circuit took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Verify circuit
+Verify circuit took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 9
+    .input   :       2
+    .output  :       1
+    5-LUT    :       1
+    IBUF_VPR :       2
+    OBUFT_VPR:       1
+    T_INV    :       1
+    VCC      :       1
+  Nets  : 8
+    Avg Fanout:     1.0
+    Max Fanout:     1.0
+    Min Fanout:     1.0
+  Netlist Clocks: 0
+Build Timing Graph
+  Timing Graph Nodes: 16
+  Timing Graph Edges: 15
+  Timing Graph Levels: 8
+Build Timing Graph took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Netlist contains 0 clocks
+Load Timing Constraints
+
+SDC file 'nand_gate.sdc' contained no SDC commands
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on a virtual external clock 'virtual_io_clock'
+   * optimize virtual clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'virtual_io_clock' (Virtual Clock)
+
+Load Timing Constraints took 0.00 seconds (max_rss 60.1 MiB, delta_rss +0.0 MiB)
+Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'nand_gate.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.010299 seconds).
+Load packing took 0.01 seconds (max_rss 89.9 MiB, delta_rss +29.8 MiB)
+Warning 822: Netlist contains 0 global net to non-global architecture pin connections
+Warning 823: Logic block #4 ($true) has only 1 output pin '$true.VCC[0]'. It may be a constant generator.
+
+Netlist num_nets: 4
+Netlist num_blocks: 5
+Netlist EMPTY blocks: 0.
+Netlist BLK-TL-SLICEL blocks: 1.
+Netlist BLK-TL-SLICEM blocks: 0.
+Netlist BLK-TL-BRAM_L blocks: 0.
+Netlist BLK-TL-IOPAD blocks: 3.
+Netlist BLK-TL-IOPAD_M blocks: 0.
+Netlist BLK-TL-IOPAD_S blocks: 0.
+Netlist BLK-TL-BUFGCTRL blocks: 0.
+Netlist BLK-TL-PLLE2_ADV blocks: 0.
+Netlist BLK-TL-MMCME2_ADV blocks: 0.
+Netlist BLK-TL-HCLK_IOI3 blocks: 0.
+Netlist BLK-TL-GTPE2_COMMON blocks: 0.
+Netlist BLK-TL-GTPE2_CHANNEL blocks: 0.
+Netlist BLK-TL-IBUFDS_GTE2 blocks: 0.
+Netlist BLK-TL-IPAD blocks: 0.
+Netlist BLK-TL-OPAD blocks: 0.
+Netlist BLK-TL-PCIE_2_1 blocks: 0.
+Netlist SYN-VCC blocks: 1.
+Netlist SYN-GND blocks: 0.
+Netlist inputs pins: 2
+Netlist output pins: 2
+
+
+Pb types usage...
+  BLK-TL-SLICEL              : 1
+   SLICEL0                   : 1
+    COMMON_LUT_AND_F78MUX    : 1
+     ALUT                    : 1
+      A5LUT                  : 1
+       lut                   : 1
+  BLK-TL-IOPAD               : 3
+   IOB33                     : 3
+    IOB33_MODES              : 3
+     IBUF_VPR                : 2
+     inpad                   : 2
+     OBUFT_VPR               : 1
+     outpad                  : 1
+   OLOGICE3                  : 1
+    OLOGIC_TFF               : 1
+     T_INV                   : 1
+  SYN-VCC                    : 1
+   VCC                       : 1
+
+Create Device
+# Build Device Grid
+FPGA sized to 117 x 162: 18954 grid tiles (xc7a50t-test)
+
+Resource usage...
+	Netlist
+		1	blocks of type: BLK-TL-SLICEL
+	Architecture
+		2150	blocks of type: BLK-TL-CLBLL_L
+		1200	blocks of type: BLK-TL-CLBLL_R
+		1800	blocks of type: BLK-TL-CLBLM_L
+		3000	blocks of type: BLK-TL-CLBLM_R
+	Netlist
+		0	blocks of type: BLK-TL-SLICEM
+	Architecture
+		1800	blocks of type: BLK-TL-CLBLM_L
+		3000	blocks of type: BLK-TL-CLBLM_R
+	Netlist
+		0	blocks of type: BLK-TL-BRAM_L
+	Architecture
+		55	blocks of type: BLK-TL-BRAM_L
+	Netlist
+		3	blocks of type: BLK-TL-IOPAD
+	Architecture
+		6	blocks of type: BLK-TL-LIOPAD_SING
+		4	blocks of type: BLK-TL-RIOPAD_SING
+		72	blocks of type: BLK-TL-LIOPAD_M
+		48	blocks of type: BLK-TL-RIOPAD_M
+		72	blocks of type: BLK-TL-LIOPAD_S
+		48	blocks of type: BLK-TL-RIOPAD_S
+	Netlist
+		0	blocks of type: BLK-TL-IOPAD_M
+	Architecture
+		72	blocks of type: BLK-TL-LIOPAD_M
+		48	blocks of type: BLK-TL-RIOPAD_M
+	Netlist
+		0	blocks of type: BLK-TL-IOPAD_S
+	Architecture
+		72	blocks of type: BLK-TL-LIOPAD_S
+		48	blocks of type: BLK-TL-RIOPAD_S
+	Netlist
+		0	blocks of type: BLK-TL-BUFGCTRL
+	Architecture
+		16	blocks of type: BLK-TL-CLK_BUFG_BOT_R
+		16	blocks of type: BLK-TL-CLK_BUFG_TOP_R
+	Netlist
+		0	blocks of type: BLK-TL-PLLE2_ADV
+	Architecture
+		2	blocks of type: BLK-TL-CMT_TOP_L_UPPER_T
+		3	blocks of type: BLK-TL-CMT_TOP_R_UPPER_T
+	Netlist
+		0	blocks of type: BLK-TL-MMCME2_ADV
+	Architecture
+		2	blocks of type: BLK-TL-CMT_TOP_L_LOWER_B
+		3	blocks of type: BLK-TL-CMT_TOP_R_LOWER_B
+	Netlist
+		0	blocks of type: BLK-TL-HCLK_IOI3
+	Architecture
+		5	blocks of type: BLK-TL-HCLK_IOI3
+	Netlist
+		0	blocks of type: BLK-TL-GTPE2_COMMON
+	Architecture
+		7	blocks of type: BLK-TL-GTP_COMMON
+	Netlist
+		0	blocks of type: BLK-TL-GTPE2_CHANNEL
+	Architecture
+		5	blocks of type: BLK-TL-GTP_CHANNEL_0
+		5	blocks of type: BLK-TL-GTP_CHANNEL_1
+		5	blocks of type: BLK-TL-GTP_CHANNEL_2
+		5	blocks of type: BLK-TL-GTP_CHANNEL_3
+	Netlist
+		0	blocks of type: BLK-TL-IBUFDS_GTE2
+	Architecture
+		7	blocks of type: BLK-TL-GTP_COMMON
+	Netlist
+		0	blocks of type: BLK-TL-IPAD
+	Architecture
+		7	blocks of type: BLK-TL-GTP_COMMON
+		5	blocks of type: BLK-TL-GTP_CHANNEL_0
+		5	blocks of type: BLK-TL-GTP_CHANNEL_1
+		5	blocks of type: BLK-TL-GTP_CHANNEL_2
+		5	blocks of type: BLK-TL-GTP_CHANNEL_3
+	Netlist
+		0	blocks of type: BLK-TL-OPAD
+	Architecture
+		5	blocks of type: BLK-TL-GTP_CHANNEL_0
+		5	blocks of type: BLK-TL-GTP_CHANNEL_1
+		5	blocks of type: BLK-TL-GTP_CHANNEL_2
+		5	blocks of type: BLK-TL-GTP_CHANNEL_3
+	Netlist
+		0	blocks of type: BLK-TL-PCIE_2_1
+	Architecture
+		1	blocks of type: BLK-TL-PCIE_BOT
+	Netlist
+		1	blocks of type: SYN-VCC
+	Architecture
+		1	blocks of type: SYN-VCC
+	Netlist
+		0	blocks of type: SYN-GND
+	Architecture
+		1	blocks of type: SYN-GND
+
+Device Utilization: 0.00 (target 1.00)
+	Physical Tile BLK-TL-CLBLL_L:
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEL
+	Physical Tile BLK-TL-CLBLL_R:
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEL
+	Physical Tile BLK-TL-CLBLM_L:
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEM
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEL
+	Physical Tile BLK-TL-CLBLM_R:
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEM
+	Block Utilization: 0.00 Logical Block: BLK-TL-SLICEL
+	Physical Tile BLK-TL-BRAM_L:
+	Block Utilization: 0.00 Logical Block: BLK-TL-BRAM_L
+	Physical Tile BLK-TL-LIOPAD_M:
+	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_M
+	Physical Tile BLK-TL-LIOPAD_S:
+	Block Utilization: 0.04 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_S
+	Physical Tile BLK-TL-LIOPAD_SING:
+	Block Utilization: 0.50 Logical Block: BLK-TL-IOPAD
+	Physical Tile BLK-TL-RIOPAD_M:
+	Block Utilization: 0.06 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_M
+	Physical Tile BLK-TL-RIOPAD_S:
+	Block Utilization: 0.06 Logical Block: BLK-TL-IOPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-IOPAD_S
+	Physical Tile BLK-TL-RIOPAD_SING:
+	Block Utilization: 0.75 Logical Block: BLK-TL-IOPAD
+	Physical Tile BLK-TL-CLK_BUFG_BOT_R:
+	Block Utilization: 0.00 Logical Block: BLK-TL-BUFGCTRL
+	Physical Tile BLK-TL-CLK_BUFG_TOP_R:
+	Block Utilization: 0.00 Logical Block: BLK-TL-BUFGCTRL
+	Physical Tile BLK-TL-CMT_TOP_L_UPPER_T:
+	Block Utilization: 0.00 Logical Block: BLK-TL-PLLE2_ADV
+	Physical Tile BLK-TL-CMT_TOP_R_UPPER_T:
+	Block Utilization: 0.00 Logical Block: BLK-TL-PLLE2_ADV
+	Physical Tile BLK-TL-CMT_TOP_L_LOWER_B:
+	Block Utilization: 0.00 Logical Block: BLK-TL-MMCME2_ADV
+	Physical Tile BLK-TL-CMT_TOP_R_LOWER_B:
+	Block Utilization: 0.00 Logical Block: BLK-TL-MMCME2_ADV
+	Physical Tile BLK-TL-HCLK_IOI3:
+	Block Utilization: 0.00 Logical Block: BLK-TL-HCLK_IOI3
+	Physical Tile BLK-TL-GTP_COMMON:
+	Block Utilization: 0.00 Logical Block: BLK-TL-IPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-GTPE2_COMMON
+	Block Utilization: 0.00 Logical Block: BLK-TL-IBUFDS_GTE2
+	Physical Tile BLK-TL-GTP_CHANNEL_0:
+	Block Utilization: 0.00 Logical Block: BLK-TL-OPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-GTPE2_CHANNEL
+	Block Utilization: 0.00 Logical Block: BLK-TL-IPAD
+	Physical Tile BLK-TL-GTP_CHANNEL_1:
+	Block Utilization: 0.00 Logical Block: BLK-TL-OPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-GTPE2_CHANNEL
+	Block Utilization: 0.00 Logical Block: BLK-TL-IPAD
+	Physical Tile BLK-TL-GTP_CHANNEL_2:
+	Block Utilization: 0.00 Logical Block: BLK-TL-OPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-GTPE2_CHANNEL
+	Block Utilization: 0.00 Logical Block: BLK-TL-IPAD
+	Physical Tile BLK-TL-GTP_CHANNEL_3:
+	Block Utilization: 0.00 Logical Block: BLK-TL-OPAD
+	Block Utilization: 0.00 Logical Block: BLK-TL-GTPE2_CHANNEL
+	Block Utilization: 0.00 Logical Block: BLK-TL-IPAD
+	Physical Tile BLK-TL-PCIE_BOT:
+	Block Utilization: 0.00 Logical Block: BLK-TL-PCIE_2_1
+	Physical Tile SYN-VCC:
+	Block Utilization: 1.00 Logical Block: SYN-VCC
+	Physical Tile SYN-GND:
+	Block Utilization: 0.00 Logical Block: SYN-GND
+
+# Build Device Grid took 0.04 seconds (max_rss 90.0 MiB, delta_rss +0.0 MiB)
+# Loading routing resource graph
+
+
+# Loading routing resource graph took 13.09 seconds (max_rss 3947.4 MiB, delta_rss +3857.5 MiB)
+  RR Graph Nodes: 2934684
+  RR Graph Edges: 22357697
+Create Device took 13.81 seconds (max_rss 3947.4 MiB, delta_rss +3857.5 MiB)
+
+Load Placement
+Reading nand_gate.place.
+
+Successfully read nand_gate.place.
+
+Load Placement took 0.00 seconds (max_rss 3947.4 MiB, delta_rss +0.0 MiB)
+
+Load Routing
+Begin loading FPGA routing file.
+Finished loading route file
+Load Routing took 0.09 seconds (max_rss 3947.4 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 546072
+Circuit successfully routed with a channel width factor of 500.
+Incr Slack updates 1 in 3.647e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.567e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 6.589e-06 sec
+Synchronize the packed netlist to routing optimization
+# Annotating rr_node with routed nets
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 3947.4 MiB, delta_rss +0.0 MiB)
+Found 0 mismatches between routing and packing results.
+Fixed 0 routing traces due to mismatch between routing and packing results.
+Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 3947.4 MiB, delta_rss +0.0 MiB)
+Writing Implementation FASM: nand_gate.fasm
+The entire flow of VPR took 18.1957 seconds.

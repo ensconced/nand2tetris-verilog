@@ -13,7 +13,7 @@ module not_16_tb;
             in <= rand_in;
             #period
             assert(out == ~in) else begin
-                $display("in: ", "%b", in, ", out: ", "%b", out);
+                $display("in: ", "%b", in, ", out: ", "%b", out, "expected out: ", "%b", ~in);
                 $fatal(1);
             end;
         end

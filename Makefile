@@ -1,5 +1,5 @@
 current_dir := ${CURDIR}
-TOP := not_gate
+TOP := full_adder
 SOURCES = $(shell find ${current_dir} -name '*.v' ! -name '*_tb.v')
 XDC := ${current_dir}/basys3.xdc
 

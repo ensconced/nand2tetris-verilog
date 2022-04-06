@@ -8,9 +8,9 @@ module add_16_tb;
     
     initial
     begin
-        for (int i = 0; i < 16; i++) begin
-            rand_in_a = $urandom();
-            rand_in_b = $urandom();
+        for (int i = 0; i < 128; i++) begin
+            rand_in_a = $random();
+            rand_in_b = $random();
             in_a <= rand_in_a;
             in_b <= rand_in_b;
             #period

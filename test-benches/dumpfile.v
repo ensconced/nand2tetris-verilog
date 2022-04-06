@@ -1,7 +1,7 @@
 module dumpfile;
     initial
     begin
-        // $dumpfile("test.vcd");
-        // $dumpvars(0,ram_512_tb);
+        $dumpfile("test.vcd");
+        $dumpvars(0, counter_tb);
     end
 endmodule

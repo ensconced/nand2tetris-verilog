@@ -7,9 +7,6 @@ module ram_64_tb;
     ram_64 UUT (.in(in), .addr(addr), .load(load), .clock(clock), .out(out));
     initial
     begin
-        $dumpfile("test.vcd");
-        $dumpvars(0,ram_64_tb);
-
         for (int i = 0; i < 128; i++) begin
             val_a = $random();
             val_b = $random();

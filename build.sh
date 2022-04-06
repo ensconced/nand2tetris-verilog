@@ -7,7 +7,7 @@ ALL_VERILOG_FILES=$(find . -name '*.v' ! -path './build/*')
 iverilog -gassertions -g2012 -o "$ICARUS_OUT_FILENAME" $ALL_VERILOG_FILES
 echo "finished icarus build"
 
-vvp "$ICARUS_OUT_FILENAME"
+vvp "$ICARUS_OUT_FILENAME" -vcd
 echo "tests passed!"
 
 export INSTALL_DIR=~/opt/symbiflow

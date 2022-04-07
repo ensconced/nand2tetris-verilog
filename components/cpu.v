@@ -1,5 +1,4 @@
-module cpu (input [15:0] alu_out,
-            input [15:0] in_m,
+module cpu (input [15:0] in_m,
             input [15:0] instruction,
             input reset,
             input clock,
@@ -14,7 +13,7 @@ module cpu (input [15:0] alu_out,
     reg_16 REG_A (reg_a_in, reg_a_load, clock, reg_a_out);
     reg_16 REG_D (reg_d_in, reg_d_load, clock, in_x);
     mux_16 MUX_A (reg_a_out, in_m, instruction[12], in_y);
-    jump_loader JUMP_LOADER_A (instruction[5], instruction[4], instruction[3], alu_out_is_zero, alu_out[15], instruction[15], jump_loader_out);
+    jump_loader JUMP_LOADER_A (instruction[2], instruction[1], instruction[0], alu_out_is_zero, alu_out[15], instruction[15], jump_loader_out);
     counter COUNTER_A (reg_a_out, 1'b1, jump_loader_out, reset, clock, pc);
     assign address_m = reg_a_out;
 endmodule

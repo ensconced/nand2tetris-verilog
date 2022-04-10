@@ -4,9 +4,12 @@ set -eu
 
 # set -v
 
+node romgen.js count > components/rom.mem
+
 ICARUS_OUT_FILENAME="icarus.out"
 ALL_VERILOG_FILES=$(find . -name '*.v' ! -path './build/*')
-iverilog -v -gassertions -g2012 -o "$ICARUS_OUT_FILENAME" $ALL_VERILOG_FILES
+export ROM_FILE="\"$(realpath ./components/rom.mem)\""
+iverilog -v -gassertions -g2012 -DROM_FILE="$ROM_FILE" -o "$ICARUS_OUT_FILENAME" $ALL_VERILOG_FILES
 vvp "$ICARUS_OUT_FILENAME" -vcd
 echo "tests passed!"
 

@@ -1,5 +1,5 @@
 current_dir := ${CURDIR}
-TOP := rom_32k
+TOP := computer
 SOURCES = $(shell find ${current_dir} -name '*.v' ! -name '*_tb.v')
 XDC := ${current_dir}/basys3.xdc
 
@@ -24,7 +24,7 @@ ${BOARD_BUILDDIR}:
 	mkdir -p ${BOARD_BUILDDIR}
 
 ${BOARD_BUILDDIR}/${TOP}.eblif: ${SOURCES} ${XDC} ${SDC} ${PCF} | ${BOARD_BUILDDIR}
-	cd ${BOARD_BUILDDIR} && symbiflow_synth -t ${TOP} -v ${SOURCES} -d ${BITSTREAM_DEVICE} -p ${PARTNAME} ${XDC_CMD} 2>&1 > /dev/null
+	cd ${BOARD_BUILDDIR} && "${current_dir}"/synth.sh -t ${TOP} -v ${SOURCES} -d ${BITSTREAM_DEVICE} -p ${PARTNAME} ${XDC_CMD} 2>&1 > /dev/null
 
 ${BOARD_BUILDDIR}/${TOP}.net: ${BOARD_BUILDDIR}/${TOP}.eblif
 	cd ${BOARD_BUILDDIR} && symbiflow_pack -e ${TOP}.eblif -d ${DEVICE} ${SDC_CMD} 2>&1 > /dev/null

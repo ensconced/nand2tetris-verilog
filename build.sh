@@ -4,7 +4,7 @@ set -eu
 
 # set -v
 
-node romgen.js count > components/rom.mem
+node romgen.js blinky > components/rom.mem
 
 ICARUS_OUT_FILENAME="icarus.out"
 ALL_VERILOG_FILES=$(find . -name '*.v' ! -path './build/*')

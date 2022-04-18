@@ -23,7 +23,7 @@ module computer_tb;
         reset = 1;
         tick(clock);
         reset = 0;
-        for (int i = 0; i < 128; i++) begin
+        for (int i = 0; i < 1024; i++) begin
             tick(clock);
         end;
         // No assertions here but this testbench should be useful for viewing in gtkwave.
